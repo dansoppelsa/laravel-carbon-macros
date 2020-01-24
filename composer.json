@@ -1,0 +1,14 @@
+{
+    "name": "dansoppelsa/laravel-carbon-macros",
+    "description": "Laravel Carbon Macros",
+    "type": "library",
+    "require": {
+        "orchestra/testbench": "^4.5"
+    },
+    "authors": [
+        {
+            "name": "Dan Soppelsa",
+            "email": "dsoppelsa@gmail.com"
+        }
+    ]
+}
