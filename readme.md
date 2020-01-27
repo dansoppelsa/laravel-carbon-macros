@@ -34,7 +34,7 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 ## Installation
 #### Install via composer
 ```
-composer require dansoppelsa/carwash
+composer require dansoppelsa/laravel-carbon-macros
 ```
 
 ## Usage
