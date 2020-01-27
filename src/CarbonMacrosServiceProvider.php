@@ -118,7 +118,7 @@ class CarbonMacrosServiceProvider extends ServiceProvider
             }
 
             if ($this->month !== 1) {
-                return;
+                return false;
             }
 
             // Third Monday in January

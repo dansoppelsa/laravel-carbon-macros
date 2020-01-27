@@ -11,7 +11,7 @@ class USHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertEquals($validity, $date->isMlkJrDay());
+        $this->assertSame($validity, $date->isMlkJrDay());
     }
 
     public function provideMlkJrDayData()
@@ -24,6 +24,7 @@ class USHolidaysTest extends TestCase
             '2025-01-19' => ['2025-01-19', false],
             '2025-01-20' => ['2025-01-20', true],
             '2025-01-21' => ['2025-01-21', false],
+            '2025-02-21' => ['2025-02-21', false],
         ];
     }
 
