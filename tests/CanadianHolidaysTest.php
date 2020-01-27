@@ -107,4 +107,28 @@ class CanadianHolidaysTest extends TestCase
             '2020-07-01' => ['2020-07-01', true],
         ];
     }
+    /**
+     * @dataProvider provideLabourDayData
+     */
+    public function test_it_knows_labour_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertEquals($validity, $date->isLabourDay());
+    }
+
+    public function provideLabourDayData()
+    {
+        return [
+            '1893-09-04' => ['1893-09-04', false],
+            '1894-09-03' => ['1894-09-03', true],
+            '2015-09-07' => ['2015-09-07', true],
+            '2016-09-05' => ['2016-09-05', true],
+            '2020-09-06' => ['2020-09-06', false],
+            '2020-09-07' => ['2020-09-07', true],
+            '2020-09-08' => ['2020-09-08', false],
+            '2025-09-01' => ['2025-09-01', true],
+            '2025-09-02' => ['2025-09-02', false],
+        ];
+    }
 }
