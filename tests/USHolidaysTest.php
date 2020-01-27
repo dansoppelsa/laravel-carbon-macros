@@ -35,7 +35,7 @@ class USHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertEquals($validity, $date->isIndependenceDay());
+        $this->assertSame($validity, $date->isIndependenceDay());
     }
 
     public function provideIndependenceDayData()
@@ -58,7 +58,7 @@ class USHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertEquals($validity, $date->isMemorialDay());
+        $this->assertSame($validity, $date->isMemorialDay());
     }
 
     public function provideMemorialDayData()
@@ -84,7 +84,7 @@ class USHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertEquals($validity, $date->isLaborDay());
+        $this->assertSame($validity, $date->isLaborDay());
     }
 
     public function provideLaborDayData()
@@ -109,7 +109,7 @@ class USHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertEquals($validity, $date->isVeteransDay());
+        $this->assertSame($validity, $date->isVeteransDay());
     }
 
     public function provideVeteransDayData()
@@ -131,7 +131,7 @@ class USHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertEquals($validity, $date->isAmericanThanksgiving());
+        $this->assertSame($validity, $date->isAmericanThanksgiving());
     }
 
     public function provideAmericanThanksgivingData()
