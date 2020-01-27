@@ -205,4 +205,22 @@ class CanadianHolidaysTest extends TestCase
             '2050-12-25' => ['2050-12-25', true],
         ];
     }
+
+    /**
+     * @dataProvider provideBoxingDayData
+     */
+    public function test_it_knows_boxing_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertEquals($validity, $date->isBoxingDay());
+    }
+
+    public function provideBoxingDayData()
+    {
+        return [
+            '1950-12-26' => ['1950-12-26', true],
+            '2020-12-26' => ['2020-12-26', true],
+        ];
+    }
 }
