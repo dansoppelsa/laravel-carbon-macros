@@ -10,5 +10,22 @@
             "name": "Dan Soppelsa",
             "email": "dsoppelsa@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4" : {
+            "CarbonMacros\\" : "src"
+        }
+    },
+    "autoload-dev" : {
+        "psr-4" : {
+            "CarbonMacros\\" : "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CarbonMacros\\CarbonMacrosServiceProvider"
+            ]
+        }
+    }
 }
