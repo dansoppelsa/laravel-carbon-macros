@@ -46,7 +46,7 @@ use Illuminate\Support\Carbon;
 
 $day = Carbon::parse('2020-12-25');
 
-$day->isChristmas();
+$day->isChristmasDay();
 // true
 
 $day->isNewYearsDay();
