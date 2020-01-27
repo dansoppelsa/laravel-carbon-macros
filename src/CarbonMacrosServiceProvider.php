@@ -162,5 +162,15 @@ class CarbonMacrosServiceProvider extends ServiceProvider
 
             return $this->month === 11 && $this->day === 11;
         });
+
+        Carbon::macro('isAmericanThanksgiving', function () {
+            // US Thanksgiving is believed to have first been celebrated in 1621
+            // https://en.wikipedia.org/wiki/Thanksgiving_(United_States)
+            if ($this->year < 1789) {
+                return false;
+            }
+
+            return $this->clone()->nthOfMonth(4, static::THURSDAY)->day === $this->day;
+        });
     }
 }

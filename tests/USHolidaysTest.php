@@ -122,4 +122,29 @@ class USHolidaysTest extends TestCase
             '2050-11-11' => ['2050-11-11', true],
         ];
     }
+
+    /**
+     * @dataProvider provideAmericanThanksgivingData
+     */
+    public function test_it_knows_us_thanksgiving_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertEquals($validity, $date->isAmericanThanksgiving());
+    }
+
+    public function provideAmericanThanksgivingData()
+    {
+        return [
+            '1788-11-27' => ['1788-11-27', false],
+            '1789-11-26' => ['1789-11-26', true],
+            '2019-11-27' => ['2019-11-27', false],
+            '2019-11-28' => ['2019-11-28', true],
+            '2020-11-25' => ['2020-11-25', false],
+            '2020-11-26' => ['2020-11-26', true],
+            '2020-11-27' => ['2020-11-27', false],
+            '2021-11-25' => ['2021-11-25', true],
+            '2022-11-24' => ['2022-11-24', true],
+        ];
+    }
 }

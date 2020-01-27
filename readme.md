@@ -14,6 +14,7 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 - isIndependenceDay
 - isLaborDay
 - isVeteransDay
+- isAmericanThanksgiving
 - isChristmasDay
 
 ### Canadian Dates
