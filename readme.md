@@ -17,6 +17,7 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 - isVeteransDay
 - isAmericanThanksgiving
 - isChristmasDay
+- isNewYearsEve
 
 ### Canadian Dates
 - isNewYearsDay
@@ -31,6 +32,7 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 - isRemembranceDay
 - isChristmasDay
 - isBoxingDay
+- isNewYearsEve
 
 
 ## Installation

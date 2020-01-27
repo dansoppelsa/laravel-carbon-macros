@@ -196,5 +196,9 @@ class CarbonMacrosServiceProvider extends ServiceProvider
 
             return $this->clone()->nthOfMonth(2, static::MONDAY)->day === $this->day;
         });
+
+        Carbon::macro('isNewYearsEve', function () {
+            return $this->month === 12 && $this->day === 31;
+        });
     }
 }
