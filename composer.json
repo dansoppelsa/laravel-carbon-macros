@@ -3,6 +3,9 @@
     "description": "Laravel Carbon Macros",
     "type": "library",
     "require": {
+        "illuminate/support": ">=5.5"
+    },
+    "require-dev": {
         "orchestra/testbench": "^4.5"
     },
     "authors": [
