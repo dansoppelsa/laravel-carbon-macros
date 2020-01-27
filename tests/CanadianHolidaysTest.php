@@ -107,6 +107,7 @@ class CanadianHolidaysTest extends TestCase
             '2020-07-01' => ['2020-07-01', true],
         ];
     }
+
     /**
      * @dataProvider provideLabourDayData
      */
@@ -155,6 +156,7 @@ class CanadianHolidaysTest extends TestCase
             '2022-10-10' => ['2022-10-10', true],
         ];
     }
+
     /**
      * @dataProvider provideRemembranceDayData
      */
@@ -220,7 +222,10 @@ class CanadianHolidaysTest extends TestCase
     {
         return [
             '1950-12-26' => ['1950-12-26', true],
+            '1950-12-27' => ['1950-12-27', false],
             '2020-12-26' => ['2020-12-26', true],
+            '2050-12-25' => ['2050-12-25', false],
+            '2050-12-26' => ['2050-12-26', true],
         ];
     }
 }
