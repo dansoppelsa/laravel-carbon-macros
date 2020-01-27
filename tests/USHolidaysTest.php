@@ -171,4 +171,28 @@ class USHolidaysTest extends TestCase
             '2029-02-19' => ['2029-02-19', true],
         ];
     }
+
+    /**
+     * @dataProvider provideColumbusDayData
+     */
+    public function test_it_knows_columbus_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertSame($validity, $date->isColumbusDay());
+    }
+
+    public function provideColumbusDayData()
+    {
+        return [
+            '1868-10-12' => ['1868-10-12', false],
+            '1869-10-11' => ['1869-10-11', true],
+            '2019-10-14' => ['2019-10-14', true],
+            '2020-10-12' => ['2020-10-12', true],
+            '2020-10-13' => ['2020-10-13', false],
+            '2021-10-11' => ['2021-10-11', true],
+            '2022-10-10' => ['2022-10-10', true],
+            '2022-10-11' => ['2022-10-11', false],
+        ];
+    }
 }

@@ -13,6 +13,7 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 - isMemorialDay
 - isIndependenceDay
 - isLaborDay
+- isColumbusDay
 - isVeteransDay
 - isAmericanThanksgiving
 - isChristmasDay
