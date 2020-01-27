@@ -75,4 +75,29 @@ class USHolidaysTest extends TestCase
             '2050-05-30' => ['2050-05-30', true],
         ];
     }
+
+    /**
+     * @dataProvider provideLaborDayData
+     */
+    public function test_it_knows_labor_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertEquals($validity, $date->isLaborDay());
+    }
+
+    public function provideLaborDayData()
+    {
+        return [
+            '1893-09-04' => ['1893-09-04', false],
+            '1894-09-03' => ['1894-09-03', true],
+            '2015-09-07' => ['2015-09-07', true],
+            '2016-09-05' => ['2016-09-05', true],
+            '2020-09-06' => ['2020-09-06', false],
+            '2020-09-07' => ['2020-09-07', true],
+            '2020-09-08' => ['2020-09-08', false],
+            '2025-09-01' => ['2025-09-01', true],
+            '2025-09-02' => ['2025-09-02', false],
+        ];
+    }
 }

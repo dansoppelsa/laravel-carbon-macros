@@ -148,5 +148,9 @@ class CarbonMacrosServiceProvider extends ServiceProvider
 
             return $this->clone()->lastOfMonth(static::MONDAY)->day === $this->day;
         });
+
+        Carbon::macro('isLaborDay', function () {
+            return $this->isLabourDay();
+        });
     }
 }

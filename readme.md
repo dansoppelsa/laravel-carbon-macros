@@ -12,6 +12,7 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 - isEasterSunday
 - isMemorialDay
 - isIndependenceDay
+- isLaborDay
 - isChristmasDay
 
 ### Canadian Dates
