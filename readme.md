@@ -6,6 +6,11 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 
 ### US Dates
 
+- isNewYearsDay
+- isGoodFriday
+- isEasterSunday
+- isChristmasDay
+
 ### Canadian Dates
 
 - isNewYearsDay
