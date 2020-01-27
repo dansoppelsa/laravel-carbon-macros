@@ -134,5 +134,19 @@ class CarbonMacrosServiceProvider extends ServiceProvider
 
             return $this->month === 7 && $this->day === 4;
         });
+
+        Carbon::macro('isMemorialDay', function () {
+            // Memorial Day was first observed in 1874
+            // https://en.wikipedia.org/wiki/Memorial_Day
+            if ($this->year < 1874) {
+                return false;
+            }
+
+            if ($this->month !== 5) {
+                return false;
+            }
+
+            return $this->clone()->lastOfMonth(static::MONDAY)->day === $this->day;
+        });
     }
 }

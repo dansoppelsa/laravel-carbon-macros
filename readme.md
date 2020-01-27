@@ -10,6 +10,7 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 - isMlkJrDay
 - isGoodFriday
 - isEasterSunday
+- isMemorialDay
 - isIndependenceDay
 - isChristmasDay
 

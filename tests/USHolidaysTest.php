@@ -49,4 +49,30 @@ class USHolidaysTest extends TestCase
             '2050-07-04' => ['2050-07-04', true],
         ];
     }
+
+    /**
+     * @dataProvider provideMemorialDayData
+     */
+    public function test_it_knows_memorial_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertEquals($validity, $date->isMemorialDay());
+    }
+
+    public function provideMemorialDayData()
+    {
+        return [
+            '1873-05-26' => ['1873-05-26', false],
+            '1874-05-25' => ['1874-05-25', true],
+            '2019-05-27' => ['2019-05-27', true],
+            '2020-05-24' => ['2020-05-24', false],
+            '2020-05-25' => ['2020-05-25', true],
+            '2020-05-26' => ['2020-05-26', false],
+            '2021-05-31' => ['2021-05-31', true],
+            '2022-05-30' => ['2022-05-30', true],
+            '2050-05-29' => ['2050-05-29', false],
+            '2050-05-30' => ['2050-05-30', true],
+        ];
+    }
 }
