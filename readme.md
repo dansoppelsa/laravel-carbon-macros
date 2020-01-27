@@ -5,7 +5,6 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 ## Available Methods
 
 ### US Dates
-
 - isNewYearsDay
 - isMlkJrDay
 - isGoodFriday
@@ -18,7 +17,6 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 - isChristmasDay
 
 ### Canadian Dates
-
 - isNewYearsDay
 - isFamilyDay
 - isGoodFriday
@@ -31,3 +29,26 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 - isRemembranceDay
 - isChristmasDay
 - isBoxingDay
+
+
+## Installation
+#### Install via composer
+```
+composer require dansoppelsa/carwash
+```
+
+## Usage
+```php
+<?php
+
+use Illuminate\Support\Carbon;
+
+
+$day = Carbon::parse('2020-12-25');
+
+$day->isChristmas();
+// true
+
+$day->isNewYearsDay();
+// false
+``` 
