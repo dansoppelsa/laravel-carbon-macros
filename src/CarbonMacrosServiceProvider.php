@@ -55,5 +55,15 @@ class CarbonMacrosServiceProvider extends ServiceProvider
             return  $this->month === 10 &&
                 $this->clone()->firstOfMonth(Carbon::MONDAY)->addWeek()->day === $this->day;
         });
+
+        Carbon::macro('isRemembranceDay', function () {
+            // Remembrance Day was first observed officially in Canada in 1931
+            // https://en.wikipedia.org/wiki/Remembrance_Day
+            if ($this->year < 1931) {
+                return false;
+            }
+
+            return $this->month === 11 && $this->day === 11;
+        });
     }
 }

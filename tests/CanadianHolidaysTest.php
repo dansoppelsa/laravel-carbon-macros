@@ -155,4 +155,27 @@ class CanadianHolidaysTest extends TestCase
             '2022-10-10' => ['2022-10-10', true],
         ];
     }
+    /**
+     * @dataProvider provideRemembranceDayData
+     */
+    public function test_it_knows_remembrance_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertEquals($validity, $date->isRemembranceDay());
+    }
+
+    public function provideRemembranceDayData()
+    {
+        return [
+            '1900-11-11' => ['1900-11-11', false],
+            '1930-11-11' => ['1930-11-11', false],
+            '1931-11-11' => ['1931-11-11', true],
+            '1950-11-11' => ['1950-11-11', true],
+            '2020-11-10' => ['2020-11-10', false],
+            '2020-11-11' => ['2020-11-11', true],
+            '2020-11-12' => ['2020-11-12', false],
+            '2050-11-11' => ['2050-11-11', true],
+        ];
+    }
 }
