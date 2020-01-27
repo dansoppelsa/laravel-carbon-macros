@@ -29,5 +29,8 @@ class CarbonMacrosServiceProvider extends ServiceProvider
                 ->isEasterSunday();
         });
 
+        Carbon::macro('isCanadaDay', function () {
+            return  $this->month === 7 && $this->day === 1;
+        });
     }
 }

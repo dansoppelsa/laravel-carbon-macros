@@ -83,4 +83,28 @@ class CanadianHolidaysTest extends TestCase
             '2050-04-11' => ['2050-04-11', false],
         ];
     }
+    /**
+     * @dataProvider provideCanadaDayData
+     */
+    public function test_it_knows_canada_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertEquals($validity, $date->isCanadaDay());
+    }
+
+    public function provideCanadaDayData()
+    {
+        return [
+            '1970-06-30' => ['1970-06-30', false],
+            '1970-07-01' => ['1970-07-01', true],
+            '1970-07-02' => ['1970-07-02', false],
+            '1982-06-30' => ['1982-06-30', false],
+            '1982-07-01' => ['1982-07-01', true],
+            '1982-07-02' => ['1982-07-02', false],
+            '2015-07-01' => ['2015-07-01', true],
+            '2018-07-01' => ['2018-07-01', true],
+            '2020-07-01' => ['2020-07-01', true],
+        ];
+    }
 }
