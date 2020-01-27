@@ -43,6 +43,19 @@ class CarbonMacrosServiceProvider extends ServiceProvider
             // Third Monday in February
             return $this->clone()->nthOfMonth(3, static::MONDAY)->day === $this->day;
         });
+
+        Carbon::macro('isVictoriaDay', function () {
+            if ($this->month !== 5) {
+                return false;
+            }
+
+            if ($this->day >= 25) {
+                return false;
+            }
+
+            return $this->clone()->setDay(25)->previous(Carbon::MONDAY)->day == $this->day;
+        });
+
         Carbon::macro('isCanadaDay', function () {
             return  $this->month === 7 && $this->day === 1;
         });
@@ -58,6 +71,7 @@ class CarbonMacrosServiceProvider extends ServiceProvider
             return  $this->month === 9 &&
                 $this->clone()->firstOfMonth(static::MONDAY)->day === $this->day;
         });
+
         Carbon::macro('isCanadianThanksgiving', function () {
             if ($this->year < 1957) {
                 return false;

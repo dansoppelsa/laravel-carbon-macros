@@ -106,6 +106,35 @@ class CanadianHolidaysTest extends TestCase
             '2050-02-18' => ['2020-02-18', false],
         ];
     }
+
+    /**
+     * @dataProvider provideVictoriaDayData
+     */
+    public function test_it_knows_victoria_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertEquals($validity, $date->isVictoriaDay());
+    }
+
+    public function provideVictoriaDayData()
+    {
+        return [
+            '2018-05-20' => ['2018-05-20', false],
+            '2018-05-21' => ['2018-05-21', true],
+            '2018-05-22' => ['2018-05-22', false],
+            '2019-05-19' => ['2019-05-19', false],
+            '2019-05-20' => ['2019-05-20', true],
+            '2019-05-21' => ['2019-05-21', false],
+            '2020-05-17' => ['2020-05-17', false],
+            '2020-05-18' => ['2020-05-18', true],
+            '2020-05-19' => ['2020-05-19', false],
+            '2021-05-23' => ['2021-05-23', false],
+            '2021-05-24' => ['2021-05-24', true],
+            '2021-05-25' => ['2021-05-25', false],
+        ];
+    }
+
     /**
      * @dataProvider provideCanadaDayData
      */
