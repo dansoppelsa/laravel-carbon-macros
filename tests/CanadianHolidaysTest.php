@@ -28,4 +28,59 @@ class CanadianHolidaysTest extends TestCase
         ];
     }
 
+    /**
+     * @dataProvider provideEasterSundayData
+     */
+    public function test_it_knows_easter_sunday($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertEquals($validity, $date->isEasterSunday());
+    }
+
+    public function provideEasterSundayData()
+    {
+        return [
+            '1905-04-23' => ['1905-04-23', true],
+            '1970-03-28' => ['1970-03-28', false],
+            '1970-03-28' => ['1970-03-28', false],
+            '1970-03-29' => ['1970-03-29', true],
+            '1970-03-30' => ['1970-03-30', false],
+            '1990-04-14' => ['1990-04-14', false],
+            '1990-04-15' => ['1990-04-15', true],
+            '1990-04-16' => ['1990-04-16', false],
+            '2020-04-12' => ['2020-04-12', true],
+            '2020-04-13' => ['2020-04-13', false],
+            '2050-04-10' => ['2050-04-10', true],
+            '2050-04-11' => ['2050-04-11', false],
+        ];
+    }
+
+    /**
+     * @dataProvider provideGoodFridayData
+     */
+    public function test_it_knows_good_friday($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertEquals($validity, $date->isGoodFriday());
+    }
+
+    public function provideGoodFridayData()
+    {
+        return [
+            '1905-04-21' => ['1905-04-21', true],
+            '1970-03-26' => ['1970-03-26', false],
+            '1970-03-27' => ['1970-03-27', true],
+            '1970-03-28' => ['1970-03-28', false],
+            '1970-03-30' => ['1970-03-30', false],
+            '1990-04-14' => ['1990-04-14', false],
+            '1990-04-13' => ['1990-04-13', true],
+            '1990-04-16' => ['1990-04-16', false],
+            '2020-04-10' => ['2020-04-10', true],
+            '2020-04-13' => ['2020-04-13', false],
+            '2050-04-08' => ['2050-04-08', true],
+            '2050-04-11' => ['2050-04-11', false],
+        ];
+    }
 }

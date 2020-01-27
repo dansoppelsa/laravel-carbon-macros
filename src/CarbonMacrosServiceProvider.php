@@ -15,5 +15,19 @@ class CarbonMacrosServiceProvider extends ServiceProvider
         Carbon::macro('isNewYearsDay', function () {
             return $this->month === 1 && $this->day === 1;
         });
+
+        Carbon::macro('isEasterSunday', function () {
+            return $this->clone()
+                ->setMonth(3)
+                ->setDay(21)
+                ->eq($this->clone()->subDays(easter_days($this->year)));
+        });
+
+        Carbon::macro('isGoodFriday', function () {
+            return $this->clone()
+                ->addDays(2)
+                ->isEasterSunday();
+        });
+
     }
 }
