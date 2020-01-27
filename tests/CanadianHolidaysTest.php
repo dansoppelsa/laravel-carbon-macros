@@ -83,6 +83,29 @@ class CanadianHolidaysTest extends TestCase
             '2050-04-11' => ['2050-04-11', false],
         ];
     }
+
+    /**
+     * @dataProvider provideFamilyDayData
+     */
+    public function test_it_knows_family_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertEquals($validity, $date->isFamilyDay());
+    }
+
+    public function provideFamilyDayData()
+    {
+        return [
+            '1989-02-20' => ['1989-02-20', false],
+            '1990-02-19' => ['1990-02-19', true],
+            '2007-02-19' => ['1990-02-19', true],
+            '2020-02-16' => ['2020-02-16', false],
+            '2020-02-17' => ['2020-02-17', true],
+            '2020-02-18' => ['2020-02-18', false],
+            '2050-02-18' => ['2020-02-18', false],
+        ];
+    }
     /**
      * @dataProvider provideCanadaDayData
      */

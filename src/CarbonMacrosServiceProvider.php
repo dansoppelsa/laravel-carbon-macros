@@ -29,6 +29,20 @@ class CarbonMacrosServiceProvider extends ServiceProvider
                 ->isEasterSunday();
         });
 
+        Carbon::macro('isFamilyDay', function () {
+            // Family Day was first observed anywhere in Canada in 1990 in Alberta
+            // https://en.wikipedia.org/wiki/Family_Day_(Canada)
+            if ($this->year < 1990) {
+                return false;
+            }
+
+            if ($this->month !== 2) {
+                return false;
+            }
+
+            // Third Monday in February
+            return $this->clone()->nthOfMonth(3, static::MONDAY)->day === $this->day;
+        });
         Carbon::macro('isCanadaDay', function () {
             return  $this->month === 7 && $this->day === 1;
         });
