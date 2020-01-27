@@ -190,7 +190,7 @@ class CarbonMacrosServiceProvider extends ServiceProvider
         Carbon::macro('isColumbusDay', function () {
             // Columbus Day was first celebrated in 1868
             // https://www.timeanddate.com/holidays/us/columbus-day
-            if ($this->year < 1868) {
+            if ($this->year < 1869) {
                 return false;
             }
 
