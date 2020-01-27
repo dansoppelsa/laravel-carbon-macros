@@ -2,6 +2,7 @@
     "name": "dansoppelsa/laravel-carbon-macros",
     "description": "Laravel Carbon Macros",
     "type": "library",
+    "license": "MIT",
     "require": {
         "illuminate/support": ">=5.5"
     },
