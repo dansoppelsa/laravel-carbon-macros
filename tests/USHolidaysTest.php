@@ -100,4 +100,26 @@ class USHolidaysTest extends TestCase
             '2025-09-02' => ['2025-09-02', false],
         ];
     }
+
+    /**
+     * @dataProvider provideVeteransDayData
+     */
+    public function test_it_knows_veterans_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertEquals($validity, $date->isVeteransDay());
+    }
+
+    public function provideVeteransDayData()
+    {
+        return [
+            '1953-11-11' => ['1953-11-11', false],
+            '1954-11-11' => ['1954-11-11', true],
+            '2020-11-10' => ['2020-11-10', false],
+            '2020-11-11' => ['2020-11-11', true],
+            '2020-11-12' => ['2020-11-12', false],
+            '2050-11-11' => ['2050-11-11', true],
+        ];
+    }
 }

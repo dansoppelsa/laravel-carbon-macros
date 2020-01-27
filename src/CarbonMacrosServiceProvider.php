@@ -152,5 +152,15 @@ class CarbonMacrosServiceProvider extends ServiceProvider
         Carbon::macro('isLaborDay', function () {
             return $this->isLabourDay();
         });
+
+        Carbon::macro('isVeteransDay', function () {
+            // Veterans Day was first celebrated in 1954
+            // https://en.wikipedia.org/wiki/Veterans_Day
+            if ($this->year < 1954) {
+                return false;
+            }
+
+            return $this->month === 11 && $this->day === 11;
+        });
     }
 }
