@@ -131,4 +131,28 @@ class CanadianHolidaysTest extends TestCase
             '2025-09-02' => ['2025-09-02', false],
         ];
     }
+
+    /**
+     * @dataProvider provideCanadianThanksgivingData
+     */
+    public function test_it_knows_canadian_thanksgiving($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertEquals($validity, $date->isCanadianThanksgiving());
+    }
+
+    public function provideCanadianThanksgivingData()
+    {
+        return [
+            '1956-10-08' => ['1956-10-08', false],
+            '1957-10-14' => ['1957-10-14', true],
+            '2019-10-13' => ['2019-10-13', false],
+            '2019-10-14' => ['2019-10-14', true],
+            '2019-10-15' => ['2019-10-15', false],
+            '2020-10-12' => ['2020-10-12', true],
+            '2021-10-11' => ['2021-10-11', true],
+            '2022-10-10' => ['2022-10-10', true],
+        ];
+    }
 }

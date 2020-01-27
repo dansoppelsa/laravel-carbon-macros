@@ -44,5 +44,16 @@ class CarbonMacrosServiceProvider extends ServiceProvider
             return  $this->month === 9 &&
                 $this->clone()->firstOfMonth(static::MONDAY)->day === $this->day;
         });
+        Carbon::macro('isCanadianThanksgiving', function () {
+            if ($this->year < 1957) {
+                return false;
+            }
+
+            // Second Monday in October
+            // https://www.statutoryholidays.com/
+            // https://en.wikipedia.org/wiki/Thanksgiving_(Canada)
+            return  $this->month === 10 &&
+                $this->clone()->firstOfMonth(Carbon::MONDAY)->addWeek()->day === $this->day;
+        });
     }
 }
