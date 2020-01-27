@@ -148,4 +148,27 @@ class USHolidaysTest extends TestCase
             '2022-11-24' => ['2022-11-24', true],
         ];
     }
+
+    /**
+     * @dataProvider providePresidentsDayData
+     */
+    public function test_it_knows_presidents_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertSame($validity, $date->isPresidentsDay());
+    }
+
+    public function providePresidentsDayData()
+    {
+        return [
+            '1879-02-17' => ['1879-02-17', false],
+            '1880-02-16' => ['1880-02-16', true],
+            '2017-02-20' => ['2017-02-20', true],
+            '2018-02-19' => ['2018-02-19', true],
+            '2019-02-18' => ['2019-02-18', true],
+            '2020-02-17' => ['2020-02-17', true],
+            '2029-02-19' => ['2029-02-19', true],
+        ];
+    }
 }

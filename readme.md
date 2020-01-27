@@ -7,6 +7,7 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 ### US Dates
 - isNewYearsDay
 - isMlkJrDay
+- isPresidentsDay
 - isGoodFriday
 - isEasterSunday
 - isMemorialDay

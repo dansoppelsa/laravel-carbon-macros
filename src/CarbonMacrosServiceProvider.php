@@ -172,5 +172,19 @@ class CarbonMacrosServiceProvider extends ServiceProvider
 
             return $this->clone()->nthOfMonth(4, static::THURSDAY)->day === $this->day;
         });
+
+        Carbon::macro('isPresidentsDay', function () {
+            // Presidents Day was first celebrated in 1880
+            // https://www.timeanddate.com/holidays/us/washington-birthday
+            if ($this->year < 1880) {
+                return false;
+            }
+
+            if ($this->month !== 2) {
+                return false;
+            }
+
+            return $this->clone()->nthOfMonth(3, static::MONDAY)->day === $this->day;
+        });
     }
 }
