@@ -109,5 +109,20 @@ class CarbonMacrosServiceProvider extends ServiceProvider
 
             return $this->clone()->firstOfMonth(static::MONDAY)->day === $this->day;
         });
+
+        Carbon::macro('isMlkJrDay', function () {
+            // MLK Jr Day was first celebrated in  1986
+            // https://en.wikipedia.org/wiki/Martin_Luther_King_Jr._Day
+            if ($this->year < 1986) {
+                return false;
+            }
+
+            if ($this->month !== 1) {
+                return;
+            }
+
+            // Third Monday in January
+            return $this->clone()->nthOfMonth(3, static::MONDAY)->day === $this->day;
+        });
     }
 }
