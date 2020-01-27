@@ -124,5 +124,15 @@ class CarbonMacrosServiceProvider extends ServiceProvider
             // Third Monday in January
             return $this->clone()->nthOfMonth(3, static::MONDAY)->day === $this->day;
         });
+
+        Carbon::macro('isIndependenceDay', function () {
+            // Independence Day was first recognized in Massachusetts in 1781
+            // https://en.wikipedia.org/wiki/Independence_Day_(United_States)
+            if ($this->year < 1781) {
+                return false;
+            }
+
+            return $this->month === 7 && $this->day === 4;
+        });
     }
 }
