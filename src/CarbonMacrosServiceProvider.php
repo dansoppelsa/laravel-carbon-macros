@@ -65,5 +65,9 @@ class CarbonMacrosServiceProvider extends ServiceProvider
 
             return $this->month === 11 && $this->day === 11;
         });
+
+        Carbon::macro('isChristmasDay', function () {
+            return $this->month === 12 && $this->day === 25;
+        });
     }
 }

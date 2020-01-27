@@ -178,4 +178,31 @@ class CanadianHolidaysTest extends TestCase
             '2050-11-11' => ['2050-11-11', true],
         ];
     }
+
+    /**
+     * @dataProvider provideChristmasDayData
+     */
+    public function test_it_knows_christmas_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertEquals($validity, $date->isChristmasDay());
+    }
+
+    public function provideChristmasDayData()
+    {
+        return [
+            '1900-12-25' => ['1900-12-25', true],
+            '1900-12-26' => ['1900-12-26', false],
+            '1920-12-25' => ['1920-12-25', true],
+            '1950-12-25' => ['1950-12-25', true],
+            '1980-12-24' => ['1980-12-24', false],
+            '1980-12-25' => ['1980-12-25', true],
+            '1980-12-26' => ['1980-12-26', false],
+            '2020-12-25' => ['2020-12-25', true],
+            '2021-12-25' => ['2021-12-25', true],
+            '2021-12-26' => ['2021-12-26', false],
+            '2050-12-25' => ['2050-12-25', true],
+        ];
+    }
 }
