@@ -101,5 +101,13 @@ class CarbonMacrosServiceProvider extends ServiceProvider
         Carbon::macro('isBoxingDay', function () {
             return $this->month === 12 && $this->day === 26;
         });
+
+        Carbon::macro('isCivicHoliday', function () {
+            if ($this->month !== 8) {
+                return false;
+            }
+
+            return $this->clone()->firstOfMonth(static::MONDAY)->day === $this->day;
+        });
     }
 }

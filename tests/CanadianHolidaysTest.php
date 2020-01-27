@@ -280,4 +280,29 @@ class CanadianHolidaysTest extends TestCase
             '2050-12-26' => ['2050-12-26', true],
         ];
     }
+
+    /**
+     * @dataProvider provideCivicHolidayData
+     */
+    public function test_it_knows_the_canadian_civic_holiday($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertEquals($validity, $date->isCivicHoliday());
+    }
+
+    public function provideCivicHolidayData()
+    {
+        return [
+            '1970-08-03' => ['1970-08-03', true],
+            '1970-08-04' => ['1970-08-04', false],
+            '2019-08-04' => ['2019-08-04', false],
+            '2019-08-05' => ['2019-08-05', true],
+            '2019-08-06' => ['2019-08-06', false],
+            '2022-08-01' => ['2022-08-01', true],
+            '2022-08-02' => ['2022-08-02', false],
+            '2050-08-01' => ['2050-08-01', true],
+            '2050-08-02' => ['2050-08-02', false],
+        ];
+    }
 }
