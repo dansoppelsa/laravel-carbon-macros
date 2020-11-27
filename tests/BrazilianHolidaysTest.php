@@ -47,4 +47,25 @@ class BrazilianHolidaysTest extends TestCase
             '2016-05-01 (Brazilian labor day)' => ['2016-05-01', true],
         ];
     }
+
+    /**
+     * @dataProvider provideBrazilianIndependenceDayData
+     */
+    public function test_it_recognizes_brazilian_independence_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertSame($validity, $date->isBrazilianIndependenceDay());
+    }
+
+    public function provideBrazilianIndependenceDayData()
+    {
+        return [
+            '1963-09-07' => ['1963-09-07', true],
+            '1963-04-22' => ['1963-04-22', false],
+            '1963-04-19' => ['1963-04-19', false],
+            '1984-04-21' => ['1984-04-21', false],
+            '2014-09-07' => ['2014-09-07', true],
+        ];
+    }
 }
