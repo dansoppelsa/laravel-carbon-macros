@@ -13,5 +13,11 @@ trait BrazilianHolidaysMacros
 
             return $this->month === 04 && $this->day === 21;
         });
+
+        Carbon::macro('isBrazilianLaborDay', function () {
+            // The brazilian labor day differs from the Canadian one. In Brazil, labor day is celebrated on May 1st.
+
+            return $this->month === 05 && $this->day === 01;
+        });
     }
 }
