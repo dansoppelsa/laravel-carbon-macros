@@ -25,5 +25,12 @@ trait BrazilianHolidaysMacros
 
             return $this->month === 9 && $this->day === 7;
         });
+
+        Carbon::macro('isTheDayOfOurLadyAparecida', function () {
+            // The day of Our Lady Aparecida is observed every 12th of October celebrating the Patroness of Brazil,
+            // the Virgin Mary (Our Lady Aparecida)
+
+            return $this->month === 10 && $this->day === 12;
+        });
     }
 }

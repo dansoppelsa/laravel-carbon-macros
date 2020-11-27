@@ -68,4 +68,25 @@ class BrazilianHolidaysTest extends TestCase
             '2014-09-07' => ['2014-09-07', true],
         ];
     }
+
+    /**
+     * @dataProvider provideDayOfOurLadyAparecidaData
+     */
+    public function test_it_recognizes_the_day_of_Our_Lady_Aparecida($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertSame($validity, $date->isTheDayOfOurLadyAparecida());
+    }
+
+    public function provideDayOfOurLadyAparecidaData()
+    {
+        return [
+            '1963-10-12' => ['1963-10-12', true],
+            '1999-04-22' => ['1999-04-22', false],
+            '1974-05-19' => ['1974-05-19', false],
+            '1984-06-21' => ['1984-06-21', false],
+            '2014-10-12' => ['2014-10-12', true],
+        ];
+    }
 }
