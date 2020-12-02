@@ -66,7 +66,7 @@ class UkrainianHolidaysTest extends TestCase
     public function provideLabourDayData()
     {
         return [
-            '1986-05-01' => ['1986-05-01', false],
+            '1986-05-01' => ['1986-05-01', true],
             '2019-05-01' => ['2019-05-01', true],
             '2019-10-05' => ['2019-10-05', false],
             '2010-12-01' => ['2010-12-01', false],
