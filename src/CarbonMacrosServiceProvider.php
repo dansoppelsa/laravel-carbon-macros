@@ -1,10 +1,13 @@
 <?php namespace CarbonMacros;
 
+use CarbonMacros\Traits\UkrainianHolidays;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class CarbonMacrosServiceProvider extends ServiceProvider
 {
+    use UkrainianHolidays;
+
     public function boot()
     {
 
@@ -12,6 +15,8 @@ class CarbonMacrosServiceProvider extends ServiceProvider
 
     public function register()
     {
+        $this->addUkrainianHolidaysMacros();
+
         Carbon::macro('isNewYearsDay', function () {
             return $this->month === 1 && $this->day === 1;
         });

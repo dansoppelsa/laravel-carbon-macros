@@ -4,9 +4,9 @@ use Illuminate\Support\Carbon;
 
 trait UkrainianHolidays
 {
-    public function register()
+    public function addUkrainianHolidaysMacros()
     {
-        Carbon::macro('isIndependenceDay', function () {
+        Carbon::macro('isUkrainianIndependenceDay', function () {
             if ($this->year < 1991) {
                 return false;
             }
@@ -25,7 +25,7 @@ trait UkrainianHolidays
             return $this->month === 10 && $this->day === 14;
         });
 
-        Carbon::macro('isConstitutionDay', function () {
+        Carbon::macro('isUkrainianConstitutionDay', function () {
             // It commemorates the anniversary of the approval by the Verkhovna Rada of the Constitution
                 // of Ukraine on 28 June 1996.
 
@@ -36,7 +36,7 @@ trait UkrainianHolidays
             return $this->month === 6 && $this->day === 28;
         });
 
-        Carbon::macro('isLabourDay', function () {
+        Carbon::macro('isUkrainianLabourDay', function () {
             return $this->month === 5 && $this->day === 1;
         });
 
@@ -52,10 +52,11 @@ trait UkrainianHolidays
         });
 
         Carbon::macro('isKupalaNight', function () {
-            // The celebration relates to the summer solstice when nights
-                // are the shortest and includes a number of Slavic rituals.
+            // The celebration relates to the summer solstice when nights are the shortest and includes
+                // a number of Slavic rituals. In Eastern Slavic countries it is celebrated according to traditional
+                // Julian calendar on the night between 6 to 7 July.
 
-            return $this->month === 6 && ($this->day === 6 || $this->day === 7);
+            return $this->month === 7 && ($this->day === 6 || $this->day === 7);
         });
 
         Carbon::macro('isVictoryDayOverNazism', function () {

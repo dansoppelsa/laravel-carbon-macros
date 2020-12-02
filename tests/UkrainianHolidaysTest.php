@@ -12,7 +12,7 @@ class UkrainianHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->isIndependenceDay());
+        $this->assertSame($validity, $date->isUkrainianIndependenceDay());
     }
 
     public function provideIndependenceDayData()
@@ -36,7 +36,7 @@ class UkrainianHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->isConstitutionDay());
+        $this->assertSame($validity, $date->isUkrainianConstitutionDay());
     }
 
     public function provideConstitutionDayData()
@@ -46,7 +46,7 @@ class UkrainianHolidaysTest extends TestCase
             '2019-08-24' => ['2019-06-28', true],
             '2019-08-05' => ['2019-08-05', false],
             '1991-06-06' => ['1991-06-06', false],
-            '2022-08-24' => ['2022-08-24', true],
+            '2022-08-24' => ['2022-08-24', false],
             '1996-06-28' => ['1996-06-28', true],
             '2050-12-01' => ['2050-12-01', false],
             '2050-06-28' => ['2050-06-28', true],
@@ -60,7 +60,7 @@ class UkrainianHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->isLabourDay());
+        $this->assertSame($validity, $date->isUkrainianLabourDay());
     }
 
     public function provideLabourDayData()
@@ -120,7 +120,7 @@ class UkrainianHolidaysTest extends TestCase
             '2019-07-05' => ['2019-07-05', false],
             '2010-10-14' => ['2010-10-14', false],
             '2005-11-14' => ['2005-11-14', false],
-            '2040-07-06' => ['2040-07-06', false],
+            '2040-07-06' => ['2040-07-06', true],
             '2050-07-06' => ['2050-07-06', true],
         ];
     }
