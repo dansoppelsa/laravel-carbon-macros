@@ -89,4 +89,25 @@ class BrazilianHolidaysTest extends TestCase
             '2014-10-12' => ['2014-10-12', true],
         ];
     }
+
+    /**
+     * @dataProvider provideBrazilianRepublicProclamationDay
+     */
+    public function test_it_recognizes_the_brazilian_republic_proclamation_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertSame($validity, $date->isBrazilianRepublicProclamationDay());
+    }
+
+    public function provideBrazilianRepublicProclamationDay()
+    {
+        return [
+            '1963-11-15`' => ['1963-11-15', true],
+            '1999-04-22' => ['1999-04-22', false],
+            '1974-05-19' => ['1974-05-19', false],
+            '1984-06-21' => ['1984-06-21', false],
+            '2014-11-15' => ['2014-11-15', true],
+        ];
+    }
 }

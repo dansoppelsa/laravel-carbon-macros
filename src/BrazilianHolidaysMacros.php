@@ -32,5 +32,11 @@ trait BrazilianHolidaysMacros
 
             return $this->month === 10 && $this->day === 12;
         });
+
+        Carbon::macro('isBrazilianRepublicProclamationDay', function () {
+           // This celebrates the day Brazil changed from being an Empire to a Republic, which was on November 15, 1889.
+
+            return $this->month = 11 && $this->day === 15;
+        });
     }
 }
