@@ -6,7 +6,8 @@ use Illuminate\Support\ServiceProvider;
 
 class CarbonMacrosServiceProvider extends ServiceProvider
 {
-    use UkrainianHolidays;
+    use BrazilianHolidaysMacros, 
+        UkrainianHolidays;
 
     public function boot()
     {
@@ -15,8 +16,6 @@ class CarbonMacrosServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->addUkrainianHolidaysMacros();
-
         Carbon::macro('isNewYearsDay', function () {
             return $this->month === 1 && $this->day === 1;
         });
@@ -205,5 +204,9 @@ class CarbonMacrosServiceProvider extends ServiceProvider
         Carbon::macro('isNewYearsEve', function () {
             return $this->month === 12 && $this->day === 31;
         });
+
+        $this->registerBrazilianHolidays();
+      
+        $this->addUkrainianHolidaysMacros();
     }
 }
