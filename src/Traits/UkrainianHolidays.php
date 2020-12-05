@@ -42,17 +42,6 @@ trait UkrainianHolidays
             return $this->month === 5 && $this->day === 1;
         });
 
-        Carbon::macro('isUkraineDefenderDay', function () {
-            // This holiday honours and pays tribute to all those who have fought and continue
-            // to fight for the state sovereignty of Ukraine. Its first celebration was in 2015.
-
-            if ($this->year < 2015) {
-                return false;
-            }
-
-            return $this->month === 10 && $this->day === 14;
-        });
-
         Carbon::macro('isKupalaNight', function () {
             // The celebration relates to the summer solstice when nights are the shortest and includes
             // a number of Slavic rituals. In Eastern Slavic countries it is celebrated according to traditional
