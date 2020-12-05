@@ -34,6 +34,11 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 - isBoxingDay
 - isNewYearsEve
 
+### Other Dates
+
+- [Brazil](./docs/brazil.md)
+- [Ukraine](./docs/ukraine.md)
+
 
 ## Installation
 #### Install via composer
