@@ -1,8 +1,10 @@
-<?php namespace CarbonMacros;
+<?php
+
+namespace CarbonMacros\Traits;
 
 use Illuminate\Support\Carbon;
 
-trait BrazilianHolidaysMacros
+trait BrazilianHolidays
 {
     public function registerBrazilianHolidays()
     {
@@ -34,7 +36,7 @@ trait BrazilianHolidaysMacros
         });
 
         Carbon::macro('isBrazilianRepublicProclamationDay', function () {
-           // This celebrates the day Brazil changed from being an Empire to a Republic, which was on November 15, 1889.
+            // This celebrates the day Brazil changed from being an Empire to a Republic, which was on November 15, 1889.
 
             return $this->month = 11 && $this->day === 15;
         });

@@ -1,12 +1,15 @@
-<?php namespace CarbonMacros;
+<?php
 
+namespace CarbonMacros;
+
+use CarbonMacros\Traits\BrazilianHolidays;
 use CarbonMacros\Traits\UkrainianHolidays;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class CarbonMacrosServiceProvider extends ServiceProvider
 {
-    use BrazilianHolidaysMacros, 
+    use BrazilianHolidays,
         UkrainianHolidays;
 
     public function boot()
@@ -61,7 +64,7 @@ class CarbonMacrosServiceProvider extends ServiceProvider
         });
 
         Carbon::macro('isCanadaDay', function () {
-            return  $this->month === 7 && $this->day === 1;
+            return $this->month === 7 && $this->day === 1;
         });
 
         Carbon::macro('isLabourDay', function () {
@@ -72,7 +75,7 @@ class CarbonMacrosServiceProvider extends ServiceProvider
                 return false;
             }
 
-            return  $this->month === 9 &&
+            return $this->month === 9 &&
                 $this->clone()->firstOfMonth(static::MONDAY)->day === $this->day;
         });
 
@@ -84,7 +87,7 @@ class CarbonMacrosServiceProvider extends ServiceProvider
             // Second Monday in October
             // https://www.statutoryholidays.com/
             // https://en.wikipedia.org/wiki/Thanksgiving_(Canada)
-            return  $this->month === 10 &&
+            return $this->month === 10 &&
                 $this->clone()->firstOfMonth(Carbon::MONDAY)->addWeek()->day === $this->day;
         });
 
@@ -206,7 +209,7 @@ class CarbonMacrosServiceProvider extends ServiceProvider
         });
 
         $this->registerBrazilianHolidays();
-      
-        $this->addUkrainianHolidaysMacros();
+
+        $this->registerUkrainianHolidays();
     }
 }
