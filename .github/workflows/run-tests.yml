@@ -12,7 +12,7 @@ jobs:
         php: [7.3, 7.4]
         dependency-version: [prefer-lowest, prefer-stable]
         include:
-            testbench: 4.*
+          - testbench: 4.*
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
 
