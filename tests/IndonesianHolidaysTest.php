@@ -30,4 +30,29 @@ class IndonesianHolidaysTest extends TestCase
             '2020-08-17' => ['2020-08-17', true],
         ];
     }
+
+    /**
+     * @dataProvider providePancasilaDayData
+     */
+    public function test_it_recognizes_pancasila_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertSame($validity, $date->isPancasilaDay());
+    }
+
+    public function providePancasilaDayData()
+    {
+        return [
+            '1945-06-01' => ['1945-06-01', true],
+            '1955-06-02' => ['1955-06-02', false],
+            '1965-07-01' => ['1965-07-01', false],
+            '1975-06-01' => ['1975-06-01', true],
+            '1985-12-01' => ['1985-12-01', false],
+            '1995-06-01' => ['1995-06-01', true],
+            '2005-05-05' => ['2005-05-05', false],
+            '2015-06-01' => ['2015-06-01', true],
+            '2020-06-01' => ['2020-06-01', true],
+        ];
+    }
 }
