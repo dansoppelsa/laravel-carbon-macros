@@ -101,4 +101,25 @@ class IndonesianHolidaysTest extends TestCase
             '2020-04-21' => ['2020-04-21', true],
         ];
     }
+
+    /**
+     * @dataProvider provideIndonesiaEducationDayData
+     */
+    public function test_it_recognizes_indonesia_education_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertSame($validity, $date->isIndonesiaEducationDay());
+    }
+
+    public function provideIndonesiaEducationDayData()
+    {
+        return [
+            '1990-05-02' => ['1990-05-02', true],
+            '1995-06-02' => ['1995-06-02', false],
+            '2000-05-02' => ['2000-05-02', true],
+            '2015-02-20' => ['2015-02-20', false],
+            '2020-05-02' => ['2020-05-02', true],
+        ];
+    }
 }
