@@ -164,4 +164,25 @@ class IndonesianHolidaysTest extends TestCase
             '2020-11-10' => ['2020-11-10', true],
         ];
     }
+
+    /**
+     * @dataProvider provideIndonesiaMotherDayData
+     */
+    public function test_it_recognizes_indonesia_mother_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertSame($validity, $date->isIndonesiaMotherDay());
+    }
+
+    public function provideIndonesiaMotherDayData()
+    {
+        return [
+            '1990-12-22' => ['1990-12-22', true],
+            '1995-06-02' => ['1995-06-02', false],
+            '2000-12-22' => ['2000-12-22', true],
+            '2015-02-20' => ['2015-02-20', false],
+            '2020-12-22' => ['2020-12-22', true],
+        ];
+    }
 }
