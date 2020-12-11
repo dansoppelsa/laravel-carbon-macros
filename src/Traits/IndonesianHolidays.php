@@ -10,5 +10,9 @@ trait IndonesianHolidays
         Carbon::macro('isIndonesiaIndependenceDay', function () {
             return $this->month === 8 && $this->day === 17;
         });
+
+        Carbon::macro('isPancasilaDay', function () {
+            return $this->month === 6 && $this->day === 1;
+        });
     }
 }
