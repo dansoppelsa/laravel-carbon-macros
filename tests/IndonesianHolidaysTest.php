@@ -143,4 +143,25 @@ class IndonesianHolidaysTest extends TestCase
             '2020-09-04' => ['2020-09-04', true],
         ];
     }
+
+    /**
+     * @dataProvider provideIndonesiaHeroDayData
+     */
+    public function test_it_recognizes_indonesia_hero_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertSame($validity, $date->isIndonesiaHeroDay());
+    }
+
+    public function provideIndonesiaHeroDayData()
+    {
+        return [
+            '1990-11-10' => ['1990-11-10', true],
+            '1995-06-02' => ['1995-06-02', false],
+            '2000-11-10' => ['2000-11-10', true],
+            '2015-02-20' => ['2015-02-20', false],
+            '2020-11-10' => ['2020-11-10', true],
+        ];
+    }
 }
