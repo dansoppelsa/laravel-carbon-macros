@@ -2,6 +2,7 @@
 
 ## 1.3.0 - 2020-12-13
 - Add Indonesian date helpers - [@PanjiNamjaElf](https://github.com/PanjiNamjaElf)
+- Add trust badges to readme - [@thinkverse](https://github.com/thinkverse) - addresses [#9](https://github.com/dansoppelsa/laravel-carbon-macros/issues/9)
 
 ## 1.2.0 - 2020-12-12
 - Add Italian date helpers - [@tiaxter](https://github.com/tiaxter)
