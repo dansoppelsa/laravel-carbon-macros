@@ -1,5 +1,7 @@
 # Laravel Carbon Macros
 
+![Packagist Version](https://img.shields.io/packagist/v/dansoppelsa/laravel-carbon-macros) ![GitHub Main Workflow Status](https://img.shields.io/github/workflow/status/dansoppelsa/laravel-carbon-macros/Tests/master) ![Packagist License](https://img.shields.io/packagist/l/dansoppelsa/laravel-carbon-macros) ![GitHub Contributors](https://img.shields.io/github/contributors/dansoppelsa/laravel-carbon-macros) 
+
 A handy collection of `Illuminate\Support\Carbon` date helpers
 
 ## Available Methods
