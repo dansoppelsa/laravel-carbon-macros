@@ -7,16 +7,16 @@ use Illuminate\Support\Carbon;
 class IndonesianHolidaysTest extends TestCase
 {
     /**
-     * @dataProvider provideIndonesiaIndependenceDayData
+     * @dataProvider provideIndonesianIndependenceDayData
      */
-    public function test_it_recognizes_indonesia_independence_day($date, $validity)
+    public function test_it_recognizes_indonesian_independence_day($date, $validity)
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->isIndonesiaIndependenceDay());
+        $this->assertSame($validity, $date->isIndonesianIndependenceDay());
     }
 
-    public function provideIndonesiaIndependenceDayData()
+    public function provideIndonesianIndependenceDayData()
     {
         return [
             '1945-08-17' => ['1945-08-17', true],
@@ -57,16 +57,16 @@ class IndonesianHolidaysTest extends TestCase
     }
 
     /**
-     * @dataProvider provideIndonesiaLaborDayData
+     * @dataProvider provideIndonesianLaborDayData
      */
-    public function test_it_recognizes_indonesia_labor_day($date, $validity)
+    public function test_it_recognizes_indonesian_labor_day($date, $validity)
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->isIndonesiaLaborDay());
+        $this->assertSame($validity, $date->isIndonesianLaborDay());
     }
 
-    public function provideIndonesiaLaborDayData()
+    public function provideIndonesianLaborDayData()
     {
         return [
             '1945-05-01' => ['1945-05-01', true],
@@ -103,16 +103,16 @@ class IndonesianHolidaysTest extends TestCase
     }
 
     /**
-     * @dataProvider provideIndonesiaEducationDayData
+     * @dataProvider provideIndonesianEducationDayData
      */
-    public function test_it_recognizes_indonesia_education_day($date, $validity)
+    public function test_it_recognizes_indonesian_education_day($date, $validity)
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->isIndonesiaEducationDay());
+        $this->assertSame($validity, $date->isIndonesianEducationDay());
     }
 
-    public function provideIndonesiaEducationDayData()
+    public function provideIndonesianEducationDayData()
     {
         return [
             '1990-05-02' => ['1990-05-02', true],
@@ -124,37 +124,40 @@ class IndonesianHolidaysTest extends TestCase
     }
 
     /**
-     * @dataProvider provideIndonesiaCustomerDayData
+     * @dataProvider provideIndonesianCustomerDayData
      */
-    public function test_it_recognizes_indonesia_customer_day($date, $validity)
+    public function test_it_recognizes_indonesian_customer_day($date, $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isIndonesiaCustomerDay());
     }
 
-    public function provideIndonesiaCustomerDayData()
+    public function provideIndonesianCustomerDayData()
     {
         return [
-            '1990-09-04' => ['1990-09-04', true],
+            '1990-09-04' => ['1990-09-04', false],
             '1995-06-02' => ['1995-06-02', false],
-            '2000-09-04' => ['2000-09-04', true],
+            '2000-09-04' => ['2000-09-04', false],
+            '2002-09-04' => ['2002-09-04', false],
+            '2003-09-04' => ['2003-09-04', true],
+            '2010-09-04' => ['2010-09-04', true],
             '2015-02-20' => ['2015-02-20', false],
             '2020-09-04' => ['2020-09-04', true],
         ];
     }
 
     /**
-     * @dataProvider provideIndonesiaHeroDayData
+     * @dataProvider provideIndonesianHeroesDayData
      */
-    public function test_it_recognizes_indonesia_hero_day($date, $validity)
+    public function test_it_recognizes_indonesian_heroes_day($date, $validity)
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->isIndonesiaHeroDay());
+        $this->assertSame($validity, $date->isIndonesianHeroesDay());
     }
 
-    public function provideIndonesiaHeroDayData()
+    public function provideIndonesianHeroesDayData()
     {
         return [
             '1990-11-10' => ['1990-11-10', true],
@@ -166,16 +169,16 @@ class IndonesianHolidaysTest extends TestCase
     }
 
     /**
-     * @dataProvider provideIndonesiaMotherDayData
+     * @dataProvider provideIndonesianMothersDayData
      */
-    public function test_it_recognizes_indonesia_mother_day($date, $validity)
+    public function test_it_recognizes_indonesian_mothers_day($date, $validity)
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->isIndonesiaMotherDay());
+        $this->assertSame($validity, $date->isIndonesianMothersDay());
     }
 
-    public function provideIndonesiaMotherDayData()
+    public function provideIndonesianMothersDayData()
     {
         return [
             '1990-12-22' => ['1990-12-22', true],

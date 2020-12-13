@@ -1,10 +1,10 @@
 ### Indonesian Dates
 
-- isIndonesiaIndependenceDay
+- isIndonesianIndependenceDay
 - isPancasilaDay
-- isIndonesiaLaborDay
+- isIndonesianLaborDay
 - isKartiniDay
-- isIndonesiaEducationDay
+- isIndonesianEducationDay
 - isIndonesiaCustomerDay
-- isIndonesiaHeroDay
-- isIndonesiaMotherDay
+- isIndonesianHeroesDay
+- isIndonesianMothersDay
