@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.3.0 - 2020-12-13
+- Add Indonesian date helpers - [@PanjiNamjaElf](https://github.com/PanjiNamjaElf)
+
 ## 1.2.0 - 2020-12-12
 - Add Italian date helpers - [@tiaxter](https://github.com/tiaxter)
 - Add Swedish date helpers - [@thinkverse](https://github.com/thinkverse)
