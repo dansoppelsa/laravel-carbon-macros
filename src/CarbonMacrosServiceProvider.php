@@ -13,7 +13,7 @@ class CarbonMacrosServiceProvider extends ServiceProvider
 {
     use BrazilianHolidays,
         UkrainianHolidays,
-        SwedishHolidays;
+        SwedishHolidays,
         ItalianHolidays;
 
     public function boot()
