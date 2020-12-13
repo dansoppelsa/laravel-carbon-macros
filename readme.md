@@ -38,6 +38,7 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 
 - [Brazil](./docs/brazil.md)
 - [Ukraine](./docs/ukraine.md)
+- [Italy](./docs/italy.md)
 
 
 ## Installation
