@@ -16,7 +16,7 @@ trait IndonesianHolidays
         });
 
         Carbon::macro('isIndonesiaLaborDay', function () {
-           return $this->month === 2 && $this->day === 20;
+           return $this->month === 5 && $this->day === 1;
         });
 
         Carbon::macro('isKartiniDay', function () {
