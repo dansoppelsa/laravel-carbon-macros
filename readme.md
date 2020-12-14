@@ -43,6 +43,7 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 - [Italy](./docs/italy.md)
 - [Sweden](./docs/sweden.md)
 - [Indonesia](./docs/indonesia.md)
+- [Kenya](./docs/kenya.md)
 
 
 ## Installation
