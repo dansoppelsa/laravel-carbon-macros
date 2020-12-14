@@ -39,10 +39,11 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 ### Other Dates
 
 - [Brazil](./docs/brazil.md)
-- [Ukraine](./docs/ukraine.md)
+- [French](./docs/french.md)
 - [Italy](./docs/italy.md)
-- [Sweden](./docs/sweden.md)
 - [Indonesia](./docs/indonesia.md)
+- [Sweden](./docs/sweden.md)
+- [Ukraine](./docs/ukraine.md)
 
 
 ## Installation
