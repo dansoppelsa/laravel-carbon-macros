@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Carbon;
 
-class BrazilianHolidaysTest extends TestCase
+class KenyanHolidaysTest extends TestCase
 {
     /**
      * @dataProvider provideKenyanIndependenceDayData
