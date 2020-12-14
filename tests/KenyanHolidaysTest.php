@@ -11,7 +11,7 @@ class KenyanHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->provideKenyanIndependenceDayData());
+        $this->assertSame($validity, $date->isKenyanIndependenceDay());
     }
 
     public function provideKenyanIndependenceDayData()
@@ -32,7 +32,7 @@ class KenyanHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->provideKenyanJamhuriDayData());
+        $this->assertSame($validity, $date->isKenyanJamhuriDay());
     }
 
     public function provideKenyanJamhuriDayData()
@@ -53,7 +53,7 @@ class KenyanHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->provideKenyanLabourDayData());
+        $this->assertSame($validity, $date->isKenyanLabourDay());
     }
 
     public function provideKenyanLabourDayData()
@@ -74,7 +74,7 @@ class KenyanHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->provideKenyanMadarakaDayData());
+        $this->assertSame($validity, $date->isKenyanMadarakaDay());
     }
 
     public function provideKenyanMadarakaDayData()
@@ -95,7 +95,7 @@ class KenyanHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->provideKenyanHudumaDayData());
+        $this->assertSame($validity, $date->isKenyanHudumaDay());
     }
 
     public function provideKenyanHudumaDayData()
@@ -116,7 +116,7 @@ class KenyanHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->provideKenyanMashujaaDayData());
+        $this->assertSame($validity, $date->isKenyanMashujaaDay());
     }
 
     public function provideKenyanMashujaaDayData()
@@ -138,7 +138,7 @@ class KenyanHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->provideKenyanUtamaduniDayData());
+        $this->assertSame($validity, $date->isKenyanUtamaduniDay());
     }
 
     public function provideKenyanUtamaduniDayData()
