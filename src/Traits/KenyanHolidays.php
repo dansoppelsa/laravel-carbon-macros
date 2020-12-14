@@ -66,7 +66,7 @@ trait KenyanHolidays
         Carbon::macro('isKenyanUtamaduniDay', function () {
             // Also internationally know as Boxing Day. It is celebrated every year after the Christmas day.
 
-            return $this->month === 11 && $this->day === 26;
+            return $this->month === 12 && $this->day === 26;
         });
 
     }
