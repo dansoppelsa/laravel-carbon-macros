@@ -39,7 +39,7 @@ A handy collection of international `Illuminate\Support\Carbon` date helpers
 ### Other Dates
 
 - [Brazil](./docs/brazil.md)
-- [French](./docs/french.md)
+- [France](docs/france.md)
 - [Germany](./docs/germany.md)
 - [Indonesia](./docs/indonesia.md)
 - [Italy](./docs/italy.md)
