@@ -13,28 +13,18 @@ trait FrenchHolidays
     {
         Carbon::macro('isAllSaintsDay', function () {
             // Called "Toussaint" in french
+            // https://en.wikipedia.org/wiki/All_Saints%27_Day
             return $this->month === 11 && $this->day === 1;
-        });
-
-        Carbon::macro('isAscensionDay', function () {
-            // Called "Ascension" in french
-            return $this->clone()
-                ->subDays(40)
-                ->isEasterSunday();
         });
 
         Carbon::macro('isAssumptionDay', function () {
             // Called "Assomption" in french
+            // https://en.wikipedia.org/wiki/Assumption_of_Mary
             return $this->month === 8 && $this->day === 15;
         });
 
-        Carbon::macro('isEasterMonday', function () {
-            return $this->clone()
-                ->subDays(1)
-                ->isEasterSunday();
-        });
-
         Carbon::macro('isFirstWarArmisticeDay', function () {
+            // https://en.wikipedia.org/wiki/Armistice_Day
             if ($this->year < 1918) {
                 return false;
             }
@@ -50,21 +40,6 @@ trait FrenchHolidays
             }
 
             return $this->month === 07 && $this->day === 14;
-        });
-
-        Carbon::macro('isPentecostDay', function () {
-            // Called "Pentecôte" in french
-            return $this->clone()
-                ->subDays(50)
-                ->isEasterSunday();
-        });
-
-        Carbon::macro('isSecondWarArmisticeDay', function () {
-            if ($this->year < 1945) {
-                return false;
-            }
-
-            return $this->month === 11 && $this->day === 8;
         });
     }
 }

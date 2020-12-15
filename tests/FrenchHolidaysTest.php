@@ -47,16 +47,6 @@ class FrenchHolidaysTest extends TestCase
     }
 
     /**
-     * @dataProvider provideSecondWarArmisticeDayData
-     */
-    public function test_it_recognizes_second_war_armistice_day($date, $validity)
-    {
-        $date = Carbon::parse($date);
-
-        $this->assertSame($validity, $date->isSecondWarArmisticeDay());
-    }
-
-    /**
      * @return array[]
      */
     public function provideAllSaintsDayData()
@@ -100,22 +90,11 @@ class FrenchHolidaysTest extends TestCase
     {
         return [
             '1982-07-14' => ['1982-07-14', true],
+            '1990-07-14' => ['1990-07-14', true],
+            '1880-07-14' => ['1880-07-14', true],
             '1879-07-14' => ['1879-07-14', false],
             '1982-07-12' => ['1918-07-12', false],
             '1982-06-14' => ['1918-06-14', false],
-        ];
-    }
-
-    /**
-     * @return array[]
-     */
-    public function provideSecondWarArmisticeDayData()
-    {
-        return [
-            '1945-11-08' => ['1945-11-08', true],
-            '1944-11-08' => ['1944-11-08', false],
-            '1982-11-09' => ['1918-11-09', false],
-            '1982-10-08' => ['1918-10-08', false],
         ];
     }
 }
