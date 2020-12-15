@@ -2,7 +2,7 @@
 
 ![Packagist Version](https://img.shields.io/packagist/v/dansoppelsa/laravel-carbon-macros) ![GitHub Main Workflow Status](https://img.shields.io/github/workflow/status/dansoppelsa/laravel-carbon-macros/Tests/master) ![Packagist License](https://img.shields.io/packagist/l/dansoppelsa/laravel-carbon-macros) ![GitHub Contributors](https://img.shields.io/github/contributors/dansoppelsa/laravel-carbon-macros) 
 
-A handy collection of `Illuminate\Support\Carbon` date helpers
+A handy collection of international `Illuminate\Support\Carbon` date helpers
 
 ## Available Methods
 
@@ -40,12 +40,12 @@ A handy collection of `Illuminate\Support\Carbon` date helpers
 
 - [Brazil](./docs/brazil.md)
 - [French](./docs/french.md)
-- [Italy](./docs/italy.md)
+- [Germany](./docs/germany.md)
 - [Indonesia](./docs/indonesia.md)
+- [Italy](./docs/italy.md)
+- [Kenya](./docs/kenya.md)
 - [Sweden](./docs/sweden.md)
 - [Ukraine](./docs/ukraine.md)
-- [Germany](./docs/germany.md)
-- [Kenya](./docs/kenya.md)
 
 
 ## Installation
