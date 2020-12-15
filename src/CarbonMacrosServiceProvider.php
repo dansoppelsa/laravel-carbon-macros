@@ -17,13 +17,12 @@ class CarbonMacrosServiceProvider extends ServiceProvider
 {
     use BrazilianHolidays,
         FrenchHolidays,
-        ItalianHolidays,
-        IndonesianHolidays,
-        SwedishHolidays,
-        UkrainianHolidays,
-        ItalianHolidays,
         GermanHolidays,
-        KenyanHolidays;
+        IndonesianHolidays,
+        ItalianHolidays,
+        KenyanHolidays,
+        SwedishHolidays,
+        UkrainianHolidays;
 
     public function boot()
     {
@@ -225,16 +224,16 @@ class CarbonMacrosServiceProvider extends ServiceProvider
 
         $this->registerFrenchHolidays();
 
+        $this->registerGermanHolidays();
+
         $this->registerIndonesianHolidays();
 
         $this->registerItalianHolidays();
 
+        $this->registerKenyanHolidays();
+
         $this->registerSwedishHolidays();
 
         $this->registerUkrainianHolidays();
-      
-        $this->registerGermanHolidays();
-
-        $this->registerKenyanHolidays();
     }
 }
