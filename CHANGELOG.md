@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.0 - 2020-12-14
+- Add German date helpers - [@dsturm](https://github.com/dsturm)
+- Add Kenyan date helpers - [@lexxyungcarter](https://github.com/lexxyungcarter)
+- Add French date helpers - [@fabpl](https://github.com/fabpl)
+- Add Brazilian Day of the Deads holiday - [@lucassmacedo](https://github.com/lucassmacedo)
+
 ## 1.3.0 - 2020-12-13
 - Add Indonesian date helpers - [@PanjiNamjaElf](https://github.com/PanjiNamjaElf)
 - Add trust badges to readme - [@thinkverse](https://github.com/thinkverse) - addresses [#9](https://github.com/dansoppelsa/laravel-carbon-macros/issues/9)
