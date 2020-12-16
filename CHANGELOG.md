@@ -3,7 +3,7 @@
 ## 1.4.0 - 2020-12-14
 - Add German date helpers - [@dsturm](https://github.com/dsturm)
 - Add Kenyan date helpers - [@lexxyungcarter](https://github.com/lexxyungcarter)
-- Add French date helpers - [@fabpl](https://github.com/fabpl)
+- Add French date helpers - [@fabpl](https://github.com/fabpl), [@auncly](https://github.com/auncly)
 - Add Brazilian Day of the Deads holiday - [@lucassmacedo](https://github.com/lucassmacedo)
 
 ## 1.3.0 - 2020-12-13

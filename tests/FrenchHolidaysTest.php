@@ -27,6 +27,16 @@ class FrenchHolidaysTest extends TestCase
     }
 
     /**
+     * @dataProvider provideAscensionDayData
+     */
+    public function test_it_recognizes_ascension_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertSame($validity, $date->isAscensionDay());
+    }
+
+    /**
      * @dataProvider provideFirstWarArmisticeDayData
      */
     public function test_it_recognizes_first_war_armistice_day($date, $validity)
@@ -37,6 +47,16 @@ class FrenchHolidaysTest extends TestCase
     }
 
     /**
+     * @dataProvider provideEasterMondayDayData
+     */
+    public function test_it_recognizes_easter_monday_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertSame($validity, $date->isEasterMonday());
+    }
+
+    /**
      * @dataProvider provideFrenchNationalDayData
      */
     public function test_it_recognizes_french_national_day($date, $validity)
@@ -44,6 +64,26 @@ class FrenchHolidaysTest extends TestCase
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isFrenchNationalDay());
+    }
+
+    /**
+     * @dataProvider providePentecostDayData
+     */
+    public function test_it_recognizes_pentecost_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertSame($validity, $date->isPentecostDay());
+    }
+
+    /**
+     * @dataProvider provideSecondWarArmisticeDayData
+     */
+    public function test_it_recognizes_second_war_armistice_day($date, $validity)
+    {
+        $date = Carbon::parse($date);
+
+        $this->assertSame($validity, $date->isSecondWarArmisticeDay());
     }
 
     /**
@@ -73,6 +113,36 @@ class FrenchHolidaysTest extends TestCase
     /**
      * @return array[]
      */
+    public function provideAscensionDayData()
+    {
+        return [
+            '2019-05-30' => ['2019-05-30', true],
+            '2019-05-29' => ['2919-05-20', false],
+            '2019-05-31' => ['2019-05-31', false],
+            '2020-05-21' => ['2020-05-21', true],
+            '2020-05-20' => ['2020-05-20', false],
+            '2020-05-22' => ['2020-05-22', false],
+        ];
+    }
+
+    /**
+     * @return array[]
+     */
+    public function provideEasterMondayDayData()
+    {
+        return [
+            '2019-04-22' => ['2019-04-22', true],
+            '2019-04-21' => ['2019-04-21', false],
+            '2019-04-23' => ['2019-04-23', false],
+            '2020-04-13' => ['2020-04-13', true],
+            '2020-04-12' => ['2020-04-12', false],
+            '2020-04-14' => ['2020-04-14', false],
+        ];
+    }
+
+    /**
+     * @return array[]
+     */
     public function provideFirstWarArmisticeDayData()
     {
         return [
@@ -95,6 +165,34 @@ class FrenchHolidaysTest extends TestCase
             '1879-07-14' => ['1879-07-14', false],
             '1982-07-12' => ['1918-07-12', false],
             '1982-06-14' => ['1918-06-14', false],
+        ];
+    }
+
+    /**
+     * @return array[]
+     */
+    public function providePentecostDayData()
+    {
+        return [
+            '2019-06-09' => ['2019-06-09', true],
+            '2019-06-08' => ['2019-06-08', false],
+            '2019-06-10' => ['2019-06-10', false],
+            '2020-05-31' => ['2020-05-31', true],
+            '2020-05-30' => ['2020-05-30', false],
+            '2020-06-01' => ['2020-06-01', false],
+        ];
+    }
+
+    /**
+     * @return array[]
+     */
+    public function provideSecondWarArmisticeDayData()
+    {
+        return [
+            '1982-05-08' => ['1982-05-08', true],
+            '1911-05-08' => ['1911-05-08', false],
+            '1982-05-07' => ['1918-05-07', false],
+            '1982-05-09' => ['1918-05-09', false],
         ];
     }
 }
