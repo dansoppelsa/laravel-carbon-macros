@@ -3,4 +3,4 @@
 - isDutchLiberationDay
 - isDutchRemembranceDay
 - isDutchNationalHoliday
-- isSaintNicholas
+- isSaintNicholasEve
