@@ -6,26 +6,22 @@ use Illuminate\Support\Carbon;
 
 trait DutchHolidays
 {
-    /**
-     *
-     */
     public function registerDutchHolidays()
     {
         Carbon::macro('isDutchLiberationDay', function () {
             // Called "Bevrijdingsdag" in Dutch
             // https://en.wikipedia.org/wiki/Liberation_Day_(Netherlands)
-
             if ($this->year < 1945) {
                 return false;
             }
 
-            return $this->month === 05 && $this->day === 05;
+            return $this->month === 5 && $this->day === 5;
         });
 
-        Carbon::macro('isSaintNicholas', function () {
+        Carbon::macro('isSaintNicholasEve', function () {
             // Called "Sinterklaas" in Dutch
             // https://en.wikipedia.org/wiki/Sinterklaas
-            return $this->month === 12 && $this->day === 05;
+            return $this->month === 12 && $this->day === 5;
         });
 
         Carbon::macro('isDutchRemembranceDay', function () {
@@ -34,8 +30,7 @@ trait DutchHolidays
                 return false;
             }
 
-            return $this->month === 05 && $this->day === 04;
-
+            return $this->month === 5 && $this->day === 4;
         });
 
         Carbon::macro('isDutchNationalDay', function () {
@@ -47,17 +42,19 @@ trait DutchHolidays
                 return false;
             }
 
-            $yearsWhereNationalDayIsOnSunday = [2014, 2025, 2031, 2036];
-            if (in_array($this->year, $yearsWhereNationalDayIsOnSunday)) {
-                if ($this->month === 4 && $this->day === 26) {
-                    return true;
-                }
+            if ($this->year < 2014) {
+                return $this->month === 4 && $this->day === 30;
+            }
 
+            if ($this->dayOfWeek === Carbon::SUNDAY) {
                 return false;
             }
 
-            return ($this->year <= 2013 && $this->month === 04 && $this->day === 30) ||
-                   ($this->year > 2013 && $this->month === 04 && $this->day === 27);
+            if ($this->month === 4 && $this->day === 26) {
+                return $this->dayOfWeek === Carbon::SATURDAY;
+            }
+
+            return $this->month === 4 && $this->day === 27;
         });
     }
 }
