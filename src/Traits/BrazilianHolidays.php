@@ -35,6 +35,11 @@ trait BrazilianHolidays
             return $this->month === 10 && $this->day === 12;
         });
 
+        Carbon::macro('isBrazilianDayOfTheDead', function () {
+            // Day of the Dead is celebrated annually on November 2. In Brazil, this date is a national holiday, instituted by Law No. 10,607, of December 19, 2002.
+            return $this->month = 11 && $this->day === 2;
+        });
+        
         Carbon::macro('isBrazilianRepublicProclamationDay', function () {
             // This celebrates the day Brazil changed from being an Empire to a Republic, which was on November 15, 1889.
 

@@ -2,9 +2,16 @@
 
 namespace CarbonMacros;
 
+use CarbonMacros\Traits\DutchHolidays;
 use CarbonMacros\Traits\BrazilianHolidays;
+use CarbonMacros\Traits\FrenchHolidays;
+use CarbonMacros\Traits\IndonesianHolidays;
 use CarbonMacros\Traits\UkrainianHolidays;
 use CarbonMacros\Traits\IndianHolidays;
+use CarbonMacros\Traits\SwedishHolidays;
+use CarbonMacros\Traits\ItalianHolidays;
+use CarbonMacros\Traits\GermanHolidays;
+use CarbonMacros\Traits\KenyanHolidays;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\ServiceProvider;
 
@@ -12,8 +19,14 @@ class CarbonMacrosServiceProvider extends ServiceProvider
 {
     use BrazilianHolidays,
         UkrainianHolidays,
-        IndianHolidays;
-
+        IndianHolidays,
+        FrenchHolidays,
+        GermanHolidays,
+        IndonesianHolidays,
+        ItalianHolidays,
+        KenyanHolidays,
+        SwedishHolidays,
+        DutchHolidays;
 
     public function boot()
     {
@@ -213,8 +226,23 @@ class CarbonMacrosServiceProvider extends ServiceProvider
 
         $this->registerBrazilianHolidays();
 
+        $this->registerFrenchHolidays();
+
+        $this->registerGermanHolidays();
+
+        $this->registerIndonesianHolidays();
+
+        $this->registerItalianHolidays();
+
+        $this->registerKenyanHolidays();
+
+        $this->registerSwedishHolidays();
+
         $this->registerUkrainianHolidays();
 
         $this->registerIndianHolidays();
+      
+        $this->registerDutchHolidays();
+      
     }
 }
