@@ -41,29 +41,11 @@ trait ZambianHolidays
         Carbon::macro('isZambianWomensDay', function () {
             // International Women's Day is celebrated on March 8th.
             // https://www.officeholidays.com/holidays/zambia/international-womens-day
-            if ($this->year < 1977) {
+            if ($this->year < 1977 || $this->month !== 3 || $this->isWeekend()) {
                 return false;
             }
 
-            if ($this->month !== 3) {
-                return false;
-            }
-
-            if ($this->day < 8 || $this->day > 10) {
-                return false;
-            }
-
-            $womensDay = Carbon::create($this->year, 3, 8);
-
-            if ($womensDay->isSaturday()) {
-                return $this->month === 3 && $this->day === $womensDay->addDays(2)->day;
-            }
-
-            if ($womensDay->isSunday()) {
-                return $this->month === 3 && $this->day === $womensDay->addDay()->day;
-            }
-
-            return $this->month === 3 && $this->day === 8;
+            return  $this->day === 8 || ($this->isMonday() && in_array($this->day, [9, 10]));
         });
 
         Carbon::macro('isZambianAfricanUnityDay', function () {
