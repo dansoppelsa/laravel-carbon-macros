@@ -10,6 +10,7 @@ A handy collection of international `Illuminate\Support\Carbon` date helpers
 - isNewYearsDay
 - isGoodFriday
 - isEasterSunday
+- isAllSaintsDay
 - isChristmasDay
 - isNewYearsEve
 

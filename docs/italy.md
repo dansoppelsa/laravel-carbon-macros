@@ -3,7 +3,6 @@
 - isLiberationDay
 - isRepublicDay
 - isImmaculateConceptionFeast
-- isAllSaintsDay
 - isAssumptionOfMaryFeast
 - isEpiphany
 - isSaintStephenDay

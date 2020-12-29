@@ -25,6 +25,14 @@ trait MultiNationalDates
                 ->isEasterSunday();
         });
 
+        Carbon::macro('isAllSaintsDay', function () {
+            // All Saints' Day is a Christian solemnity celebrated in honour of all the saints, known and unknown.
+            // Its intent is to celebrate all the saints, including those who do not celebrated individually.
+            // https://en.wikipedia.org/wiki/All_Saints%27_Day
+
+            return $this->month === 11 && $this->day === 1;
+        });
+
         Carbon::macro('isChristmasDay', function () {
             return $this->month === 12 && $this->day === 25;
         });
