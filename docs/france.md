@@ -1,6 +1,5 @@
 ### French Dates
 
-- isAllSaintsDay
 - isAscensionDay
 - isAssumptionDay
 - isEasterMonday

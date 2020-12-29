@@ -11,12 +11,6 @@ trait FrenchHolidays
      */
     public function registerFrenchHolidays()
     {
-        Carbon::macro('isAllSaintsDay', function () {
-            // Called "Toussaint" in french
-            // https://en.wikipedia.org/wiki/All_Saints%27_Day
-            return $this->month === 11 && $this->day === 1;
-        });
-
         Carbon::macro('isAscensionDay', function () {
             // Called "Ascension" in french
             // https://en.wikipedia.org/wiki/Ascension_of_Jesus
