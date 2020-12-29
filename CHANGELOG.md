@@ -1,5 +1,7 @@
 # Changelog
 
+## 1.5.0 - 2020-12-28
+- Add IDE autocomplete helper file
 - Add Indian date helpers - [@prakashchhetri](https://github.com/prakashchhetri)
 - Add Dutch date helpers - [@stephanbouman](https://github.com/stephanbouman)
 - Add Zambian date helpers - [@twmbx](https://github.com/twmbx)
