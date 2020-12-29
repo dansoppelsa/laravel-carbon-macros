@@ -1,5 +1,8 @@
 # Changelog
 
+- Add Dutch date helpers - [@stephanbouman](https://github.com/stephanbouman)
+- Add Zambian date helpers - [@twmbx](https://github.com/twmbx)
+
 ## 1.4.0 - 2020-12-14
 - Add German date helpers - [@dsturm](https://github.com/dsturm)
 - Add Kenyan date helpers - [@lexxyungcarter](https://github.com/lexxyungcarter)
