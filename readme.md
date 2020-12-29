@@ -68,6 +68,11 @@ $day = Carbon::parse('2020-12-25');
 $day->isChristmasDay();
 // true
 
+$day->isCanadaDay();
+// false
+
 $day->isNewYearsDay();
 // false
 ```
+
+![](./lcm-autocomplete.gif)
