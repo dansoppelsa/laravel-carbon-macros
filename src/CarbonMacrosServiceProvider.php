@@ -7,6 +7,7 @@ use CarbonMacros\Traits\BrazilianHolidays;
 use CarbonMacros\Traits\FrenchHolidays;
 use CarbonMacros\Traits\IndonesianHolidays;
 use CarbonMacros\Traits\UkrainianHolidays;
+use CarbonMacros\Traits\IndianHolidays;
 use CarbonMacros\Traits\SwedishHolidays;
 use CarbonMacros\Traits\ItalianHolidays;
 use CarbonMacros\Traits\GermanHolidays;
@@ -20,6 +21,7 @@ class CarbonMacrosServiceProvider extends ServiceProvider
     use BrazilianHolidays,
         FrenchHolidays,
         GermanHolidays,
+        IndianHolidays,
         IndonesianHolidays,
         ItalianHolidays,
         KenyanHolidays,
@@ -239,6 +241,8 @@ class CarbonMacrosServiceProvider extends ServiceProvider
 
         $this->registerUkrainianHolidays();
 
+        $this->registerIndianHolidays();
+      
         $this->registerDutchHolidays();
 
         $this->registerZambianHolidays();
