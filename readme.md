@@ -6,35 +6,33 @@ A handy collection of international `Illuminate\Support\Carbon` date helpers
 
 ## Available Methods
 
-### US Dates 🇺🇸
+### Multi-National Dates
 - isNewYearsDay
-- isMlkJrDay
-- isPresidentsDay
 - isGoodFriday
 - isEasterSunday
+- isChristmasDay
+- isNewYearsEve
+
+### US Dates 🇺🇸
+
+- isMlkJrDay
+- isPresidentsDay
 - isMemorialDay
 - isIndependenceDay
 - isLaborDay
 - isColumbusDay
 - isVeteransDay
 - isAmericanThanksgiving
-- isChristmasDay
-- isNewYearsEve
 
 ### Canadian Dates 🇨🇦
-- isNewYearsDay
 - isFamilyDay
-- isGoodFriday
-- isEasterSunday
 - isVictoriaDay
 - isCanadaDay
 - isCivicHoliday
 - isLabourDay
 - isCanadianThanksgiving
 - isRemembranceDay
-- isChristmasDay
 - isBoxingDay
-- isNewYearsEve
 
 ### Other Dates
 
