@@ -6,7 +6,7 @@ A handy collection of international `Illuminate\Support\Carbon` date helpers
 
 ## Available Methods
 
-### US Dates
+### US Dates 🇺🇸
 - isNewYearsDay
 - isMlkJrDay
 - isPresidentsDay
@@ -21,7 +21,7 @@ A handy collection of international `Illuminate\Support\Carbon` date helpers
 - isChristmasDay
 - isNewYearsEve
 
-### Canadian Dates
+### Canadian Dates 🇨🇦
 - isNewYearsDay
 - isFamilyDay
 - isGoodFriday
@@ -38,16 +38,17 @@ A handy collection of international `Illuminate\Support\Carbon` date helpers
 
 ### Other Dates
 
-- [Brazil](./docs/brazil.md)
-- [France](docs/france.md)
-- [Germany](./docs/germany.md)
-- [Indonesia](./docs/indonesia.md)
-- [Italy](./docs/italy.md)
-- [Kenya](./docs/kenya.md)
-- [Netherlands](./docs/netherlands.md)
-- [Sweden](./docs/sweden.md)
-- [Ukraine](./docs/ukraine.md)
-- [Zambia](./docs/zambia.md)
+- [Brazil](./docs/brazil.md) 🇧🇷
+- [France](docs/france.md) 🇫🇷
+- [Germany](./docs/germany.md) 🇩🇪
+- [India](./docs/india.md) 🇮🇳
+- [Indonesia](./docs/indonesia.md) 🇮🇩
+- [Italy](./docs/italy.md) 🇮🇹
+- [Kenya](./docs/kenya.md) 🇰🇪
+- [Netherlands](./docs/netherlands.md) 🇳🇱
+- [Sweden](./docs/sweden.md) 🇸🇪
+- [Ukraine](./docs/ukraine.md) 🇺🇦
+- [Zambia](./docs/zambia.md) 🇿🇲
 
 
 ## Installation

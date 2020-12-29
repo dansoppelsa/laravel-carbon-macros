@@ -1,5 +1,6 @@
 # Changelog
 
+- Add Indian date helpers - [@prakashchhetri](https://github.com/prakashchhetri)
 - Add Dutch date helpers - [@stephanbouman](https://github.com/stephanbouman)
 - Add Zambian date helpers - [@twmbx](https://github.com/twmbx)
 
