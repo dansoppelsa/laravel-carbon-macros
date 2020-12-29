@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+use CarbonMacros\Dev\GenerateIdeHelpers;
+use Illuminate\Console\Application;
+use Illuminate\Container\Container;
+use Illuminate\Events\Dispatcher;
+
+include './vendor/autoload.php';
+
+if (! function_exists('lcm_path'))
+{
+    function lcm_path(string $path = null): string
+    {
+        return $path ? dirname(__FILE__) . "/$path" : dirname(__FILE__);
+    }
+}
+
+$container = new Container();
+$app = new Application($container, new Dispatcher($container), '1.0');
+$app->add(new GenerateIdeHelpers);
+$app->run();

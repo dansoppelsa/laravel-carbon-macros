@@ -22,7 +22,8 @@
     },
     "autoload-dev" : {
         "psr-4" : {
-            "CarbonMacros\\" : "tests"
+            "CarbonMacros\\" : "tests",
+            "CarbonMacros\\Dev\\" : "dev"
         }
     },
     "extra": {
