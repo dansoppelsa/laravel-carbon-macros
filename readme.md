@@ -38,6 +38,7 @@ A handy collection of international `Illuminate\Support\Carbon` date helpers
 ### Other Dates
 
 - [Brazil](./docs/brazil.md) 🇧🇷
+- [Egypt](./docs/egypt.md) 🇪🇬
 - [France](docs/france.md) 🇫🇷
 - [Germany](./docs/germany.md) 🇩🇪
 - [India](./docs/india.md) 🇮🇳
