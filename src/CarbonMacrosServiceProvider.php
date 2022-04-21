@@ -17,6 +17,7 @@ use CarbonMacros\Traits\SwedishHolidays;
 use CarbonMacros\Traits\UkrainianHolidays;
 use CarbonMacros\Traits\UsDates;
 use CarbonMacros\Traits\ZambianHolidays;
+use CarbonMacros\Traits\AlgerianHolidays;
 use Illuminate\Support\ServiceProvider;
 
 class CarbonMacrosServiceProvider extends ServiceProvider
