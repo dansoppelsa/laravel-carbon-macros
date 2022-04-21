@@ -1,0 +1,4 @@
+### Algerian Dates
+
+- isAlgerianVictoriaDay
+- IsAlgerianIndependenceDay
