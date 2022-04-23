@@ -2,28 +2,30 @@
 
 namespace CarbonMacros;
 
-use CarbonMacros\Traits\BrazilianHolidays;
+use CarbonMacros\Traits\UsDates;
+use CarbonMacros\Traits\GeneralDates;
 use CarbonMacros\Traits\CanadianDates;
 use CarbonMacros\Traits\DutchHolidays;
 use CarbonMacros\Traits\FrenchHolidays;
-use CarbonMacros\Traits\GeneralDates;
 use CarbonMacros\Traits\GermanHolidays;
 use CarbonMacros\Traits\IndianHolidays;
-use CarbonMacros\Traits\IndonesianHolidays;
-use CarbonMacros\Traits\ItalianHolidays;
 use CarbonMacros\Traits\KenyanHolidays;
-use CarbonMacros\Traits\MultiNationalDates;
-use CarbonMacros\Traits\SwedishHolidays;
-use CarbonMacros\Traits\UkrainianHolidays;
-use CarbonMacros\Traits\UsDates;
-use CarbonMacros\Traits\ZambianHolidays;
 use Illuminate\Support\ServiceProvider;
+use CarbonMacros\Traits\ItalianHolidays;
+use CarbonMacros\Traits\SwedishHolidays;
+use CarbonMacros\Traits\ZambianHolidays;
+use CarbonMacros\Traits\AlgerianHolidays;
+use CarbonMacros\Traits\BrazilianHolidays;
+use CarbonMacros\Traits\UkrainianHolidays;
+use CarbonMacros\Traits\IndonesianHolidays;
+use CarbonMacros\Traits\MultiNationalDates;
 
 class CarbonMacrosServiceProvider extends ServiceProvider
 {
     use MultiNationalDates;
 
-    use BrazilianHolidays,
+    use AlgerianHolidays,
+        BrazilianHolidays,
         CanadianDates,
         FrenchHolidays,
         GermanHolidays,
@@ -44,6 +46,8 @@ class CarbonMacrosServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerMultinationalDates();
+
+        $this->registerAlgerianHolidays();
 
         $this->registerBrazilianHolidays();
 
