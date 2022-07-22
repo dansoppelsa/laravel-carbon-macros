@@ -21,6 +21,14 @@ namespace Illuminate\Support {
      * @method bool isDutchNationalDay
      * @method bool isDutchRemembranceDay
      * @method bool isSaintNicholasEve
+     * @method bool isEgyptian2011RevolutionDay
+     * @method bool isEgyptian23JulyRevolutionDay
+     * @method bool isEgyptian30JuneRevolutionDay
+     * @method bool isEgyptian6OctoberVictoryDay
+     * @method bool isEgyptianChristmasDay
+     * @method bool isEgyptianLabourDay
+     * @method bool isEgyptianNationalPoliceDay
+     * @method bool isEgyptianSinaLiberationDay
      * @method bool isAscensionDay
      * @method bool isAssumptionDay
      * @method bool isEasterMonday

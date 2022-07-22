@@ -6,6 +6,7 @@ use CarbonMacros\Traits\UsDates;
 use CarbonMacros\Traits\GeneralDates;
 use CarbonMacros\Traits\CanadianDates;
 use CarbonMacros\Traits\DutchHolidays;
+use CarbonMacros\Traits\EgyptianHolidays;
 use CarbonMacros\Traits\FrenchHolidays;
 use CarbonMacros\Traits\GermanHolidays;
 use CarbonMacros\Traits\IndianHolidays;
@@ -27,6 +28,7 @@ class CarbonMacrosServiceProvider extends ServiceProvider
     use AlgerianHolidays,
         BrazilianHolidays,
         CanadianDates,
+        EgyptianHolidays,
         FrenchHolidays,
         GermanHolidays,
         IndianHolidays,
@@ -54,6 +56,8 @@ class CarbonMacrosServiceProvider extends ServiceProvider
         $this->registerCanadianDates();
 
         $this->registerDutchHolidays();
+
+        $this->registerEgyptianDates();
 
         $this->registerFrenchHolidays();
 
