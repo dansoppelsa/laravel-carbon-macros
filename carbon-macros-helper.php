@@ -3,6 +3,10 @@
 namespace Illuminate\Support {
     /**
      * Carbon
+     * @method bool isAlgerianIndependenceDay
+     * @method bool isAlgerianLaborDay
+     * @method bool isAlgerianRevolutionDay
+     * @method bool isAmazighNewYear
      * @method bool isBrazilianDayOfTheDead
      * @method bool isBrazilianIndependenceDay
      * @method bool isBrazilianLaborDay
