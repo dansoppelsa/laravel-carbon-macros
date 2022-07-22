@@ -4,9 +4,9 @@ namespace CarbonMacros\Traits;
 
 use Illuminate\Support\Carbon;
 
-trait ZambianHolidays
+trait ZambianDates
 {
-    public function registerZambianHolidays()
+    public function registerZambianDates(): void
     {
         Carbon::macro('isZambianIndependenceDay', function () {
             // This holiday marks independence from the United Kingdom on 24th October 1964.

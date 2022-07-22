@@ -6,7 +6,7 @@ use Illuminate\Support\Carbon;
 
 trait UsDates
 {
-    public function registerUsDates()
+    public function registerUsDates(): void
     {
         Carbon::macro('isMlkJrDay', function () {
             // MLK Jr Day was first celebrated in  1986

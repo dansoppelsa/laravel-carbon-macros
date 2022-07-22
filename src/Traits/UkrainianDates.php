@@ -4,9 +4,9 @@ namespace CarbonMacros\Traits;
 
 use Illuminate\Support\Carbon;
 
-trait UkrainianHolidays
+trait UkrainianDates
 {
-    public function registerUkrainianHolidays()
+    public function registerUkrainianDates(): void
     {
         Carbon::macro('isUkrainianIndependenceDay', function () {
             if ($this->year < 1991) {

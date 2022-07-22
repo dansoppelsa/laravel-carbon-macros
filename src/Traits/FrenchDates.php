@@ -4,12 +4,12 @@ namespace CarbonMacros\Traits;
 
 use Illuminate\Support\Carbon;
 
-trait FrenchHolidays
+trait FrenchDates
 {
     /**
      *
      */
-    public function registerFrenchHolidays()
+    public function registerFrenchDates(): void
     {
         Carbon::macro('isAscensionDay', function () {
             // Called "Ascension" in french

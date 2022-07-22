@@ -4,7 +4,7 @@ namespace CarbonMacros\Traits;
 
 use Illuminate\Support\Carbon;
 
-trait EgyptianHolidays
+trait EgyptianDates
 {
     // https://en.wikipedia.org/wiki/Public_holidays_in_Egypt#National_holidays
 
@@ -12,7 +12,7 @@ trait EgyptianHolidays
     // holidays like Islamic New Year is occurs relative to
     // Islamic calendar, or may move to the end of the week
 
-    public function registerEgyptianDates()
+    public function registerEgyptianDates(): void
     {
         Carbon::macro('isEgyptianChristmasDay', function () {
             /**  @var Carbon $this */

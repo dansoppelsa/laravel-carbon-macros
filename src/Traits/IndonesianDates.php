@@ -4,9 +4,9 @@ namespace CarbonMacros\Traits;
 
 use Illuminate\Support\Carbon;
 
-trait IndonesianHolidays
+trait IndonesianDates
 {
-    public function registerIndonesianHolidays()
+    public function registerIndonesianDates(): void
     {
         Carbon::macro('isIndonesianIndependenceDay', function () {
             // https://en.wikipedia.org/wiki/Independence_Day_(Indonesia)

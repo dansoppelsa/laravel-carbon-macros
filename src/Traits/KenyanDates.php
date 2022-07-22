@@ -4,9 +4,9 @@ namespace CarbonMacros\Traits;
 
 use Illuminate\Support\Carbon;
 
-trait KenyanHolidays
+trait KenyanDates
 {
-    public function registerKenyanHolidays()
+    public function registerKenyanDates(): void
     {
         Carbon::macro('isKenyanIndependenceDay', function () {
             // This celebrates the day Kenya changed from being an Empire to a Republic, which was on 12 December 1963.

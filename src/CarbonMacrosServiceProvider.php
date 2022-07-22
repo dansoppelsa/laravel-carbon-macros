@@ -2,44 +2,43 @@
 
 namespace CarbonMacros;
 
-use CarbonMacros\Traits\UsDates;
-use CarbonMacros\Traits\GeneralDates;
+use CarbonMacros\Traits\AlgerianDates;
+use CarbonMacros\Traits\BrazilianDates;
 use CarbonMacros\Traits\CanadianDates;
-use CarbonMacros\Traits\DutchHolidays;
-use CarbonMacros\Traits\EgyptianHolidays;
-use CarbonMacros\Traits\FrenchHolidays;
-use CarbonMacros\Traits\GermanHolidays;
-use CarbonMacros\Traits\IndianHolidays;
-use CarbonMacros\Traits\KenyanHolidays;
-use Illuminate\Support\ServiceProvider;
-use CarbonMacros\Traits\ItalianHolidays;
-use CarbonMacros\Traits\SwedishHolidays;
-use CarbonMacros\Traits\ZambianHolidays;
-use CarbonMacros\Traits\AlgerianHolidays;
-use CarbonMacros\Traits\BrazilianHolidays;
-use CarbonMacros\Traits\UkrainianHolidays;
-use CarbonMacros\Traits\IndonesianHolidays;
+use CarbonMacros\Traits\DutchDates;
+use CarbonMacros\Traits\EgyptianDates;
+use CarbonMacros\Traits\FrenchDates;
+use CarbonMacros\Traits\GermanDates;
+use CarbonMacros\Traits\IndianDates;
+use CarbonMacros\Traits\IndonesianDates;
+use CarbonMacros\Traits\ItalianDates;
+use CarbonMacros\Traits\KenyanDates;
 use CarbonMacros\Traits\MultiNationalDates;
+use CarbonMacros\Traits\SwedishDates;
+use CarbonMacros\Traits\UkrainianDates;
+use CarbonMacros\Traits\UsDates;
+use CarbonMacros\Traits\ZambianDates;
+use Illuminate\Support\ServiceProvider;
 
 class CarbonMacrosServiceProvider extends ServiceProvider
 {
     use MultiNationalDates;
 
-    use AlgerianHolidays,
-        BrazilianHolidays,
+    use AlgerianDates,
+        BrazilianDates,
         CanadianDates,
-        EgyptianHolidays,
-        FrenchHolidays,
-        GermanHolidays,
-        IndianHolidays,
-        IndonesianHolidays,
-        ItalianHolidays,
-        KenyanHolidays,
-        SwedishHolidays,
-        DutchHolidays,
-        UkrainianHolidays,
+        DutchDates,
+        EgyptianDates,
+        FrenchDates,
+        GermanDates,
+        IndianDates,
+        IndonesianDates,
+        ItalianDates,
+        KenyanDates,
+        SwedishDates,
+        UkrainianDates,
         UsDates,
-        ZambianHolidays;
+        ZambianDates;
 
     public function boot()
     {
@@ -49,34 +48,34 @@ class CarbonMacrosServiceProvider extends ServiceProvider
     {
         $this->registerMultinationalDates();
 
-        $this->registerAlgerianHolidays();
+        $this->registerAlgerianDates();
 
-        $this->registerBrazilianHolidays();
+        $this->registerBrazilianDates();
 
         $this->registerCanadianDates();
 
-        $this->registerDutchHolidays();
+        $this->registerDutchDates();
 
         $this->registerEgyptianDates();
 
-        $this->registerFrenchHolidays();
+        $this->registerFrenchDates();
 
-        $this->registerGermanHolidays();
+        $this->registerGermanDates();
 
-        $this->registerIndianHolidays();
+        $this->registerIndianDates();
 
-        $this->registerIndonesianHolidays();
+        $this->registerIndonesianDates();
 
-        $this->registerItalianHolidays();
+        $this->registerItalianDates();
 
-        $this->registerKenyanHolidays();
+        $this->registerKenyanDates();
 
-        $this->registerSwedishHolidays();
+        $this->registerSwedishDates();
 
         $this->registerUsDates();
 
-        $this->registerUkrainianHolidays();
+        $this->registerUkrainianDates();
 
-        $this->registerZambianHolidays();
+        $this->registerZambianDates();
     }
 }

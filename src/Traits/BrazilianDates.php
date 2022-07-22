@@ -4,9 +4,9 @@ namespace CarbonMacros\Traits;
 
 use Illuminate\Support\Carbon;
 
-trait BrazilianHolidays
+trait BrazilianDates
 {
-    public function registerBrazilianHolidays()
+    public function registerBrazilianDates(): void
     {
         Carbon::macro('isTiradentesDay', function () {
             // Tiradentes' Day is a National Holiday to pay respects to "Joaquim José da Silva Xavier (aka: Tiradentes).

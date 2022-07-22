@@ -6,7 +6,7 @@ use Illuminate\Support\Carbon;
 
 trait CanadianDates
 {
-    public function registerCanadianDates()
+    public function registerCanadianDates(): void
     {
         Carbon::macro('isVictoriaDay', function () {
             if ($this->month !== 5) {

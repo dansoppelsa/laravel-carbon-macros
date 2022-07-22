@@ -4,9 +4,9 @@ namespace CarbonMacros\Traits;
 
 use Illuminate\Support\Carbon;
 
-trait AlgerianHolidays
+trait AlgerianDates
 {
-    public function registerAlgerianHolidays()
+    public function registerAlgerianDates(): void
     {
         // This Trait will only contain fixed holidays.
         // Since Algeria is a muslim country it has other Islamic holidays.

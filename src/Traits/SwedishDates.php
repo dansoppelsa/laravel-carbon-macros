@@ -4,9 +4,9 @@ namespace CarbonMacros\Traits;
 
 use Illuminate\Support\Carbon;
 
-trait SwedishHolidays
+trait SwedishDates
 {
-    public function registerSwedishHolidays()
+    public function registerSwedishDates(): void
     {
         Carbon::macro('isSwedishMidsummerDay', function () {
             // Midsummer Day, time to eat herring, potatoes and sour cream.

@@ -4,9 +4,9 @@ namespace CarbonMacros\Traits;
 
 use Illuminate\Support\Carbon;
 
-trait ItalianHolidays
+trait ItalianDates
 {
-    public function registerItalianHolidays()
+    public function registerItalianDates(): void
     {
         Carbon::macro('isLiberationDay', function () {
             // Liberation Day is a national holiday in Italy that commemorates the end of the fascist regime

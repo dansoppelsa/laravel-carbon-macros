@@ -4,10 +4,10 @@ namespace CarbonMacros\Traits;
 
 use Illuminate\Support\Carbon;
 
-trait IndianHolidays
+trait IndianDates
 {
 
-    public function registerIndianHolidays()
+    public function registerIndianDates(): void
     {
         Carbon::macro('isIndianRepublicDay', function () {
             // https://en.wikipedia.org/wiki/Public_holidays_in_India

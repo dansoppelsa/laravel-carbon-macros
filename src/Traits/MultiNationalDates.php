@@ -6,7 +6,7 @@ use Illuminate\Support\Carbon;
 
 trait MultiNationalDates
 {
-    public function registerMultinationalDates()
+    public function registerMultinationalDates(): void
     {
         Carbon::macro('isNewYearsDay', function () {
             return $this->month === 1 && $this->day === 1;

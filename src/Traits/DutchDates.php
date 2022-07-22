@@ -4,9 +4,9 @@ namespace CarbonMacros\Traits;
 
 use Illuminate\Support\Carbon;
 
-trait DutchHolidays
+trait DutchDates
 {
-    public function registerDutchHolidays()
+    public function registerDutchDates(): void
     {
         Carbon::macro('isDutchLiberationDay', function () {
             // Called "Bevrijdingsdag" in Dutch
