@@ -37,6 +37,7 @@ A handy collection of international `Illuminate\Support\Carbon` date helpers
 
 ### Other Dates
 
+- [Algeria](./docs/algeria.md) 🇩🇿
 - [Brazil](./docs/brazil.md) 🇧🇷
 - [Egypt](./docs/egypt.md) 🇪🇬
 - [France](docs/france.md) 🇫🇷
@@ -49,7 +50,6 @@ A handy collection of international `Illuminate\Support\Carbon` date helpers
 - [Sweden](./docs/sweden.md) 🇸🇪
 - [Ukraine](./docs/ukraine.md) 🇺🇦
 - [Zambia](./docs/zambia.md) 🇿🇲
-- [Algeria](./docs/algeria.md) 🇩🇿
 
 ## Installation
 #### Install via composer
