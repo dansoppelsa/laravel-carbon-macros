@@ -48,7 +48,7 @@ A handy collection of international `Illuminate\Support\Carbon` date helpers
 - [Sweden](./docs/sweden.md) 🇸🇪
 - [Ukraine](./docs/ukraine.md) 🇺🇦
 - [Zambia](./docs/zambia.md) 🇿🇲
-
+- [Algeria](./docs/algeria.md) 🇩🇿
 
 ## Installation
 #### Install via composer
