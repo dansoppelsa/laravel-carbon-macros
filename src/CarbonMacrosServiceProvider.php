@@ -14,6 +14,7 @@ use CarbonMacros\Traits\IndonesianDates;
 use CarbonMacros\Traits\ItalianDates;
 use CarbonMacros\Traits\KenyanDates;
 use CarbonMacros\Traits\MultiNationalDates;
+use CarbonMacros\Traits\PolishDates;
 use CarbonMacros\Traits\SwedishDates;
 use CarbonMacros\Traits\UkrainianDates;
 use CarbonMacros\Traits\UsDates;
@@ -35,6 +36,7 @@ class CarbonMacrosServiceProvider extends ServiceProvider
         IndonesianDates,
         ItalianDates,
         KenyanDates,
+        PolishDates,
         SwedishDates,
         UkrainianDates,
         UsDates,
@@ -69,6 +71,8 @@ class CarbonMacrosServiceProvider extends ServiceProvider
         $this->registerItalianDates();
 
         $this->registerKenyanDates();
+
+        $this->registerPolishDates();
 
         $this->registerSwedishDates();
 
