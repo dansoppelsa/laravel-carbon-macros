@@ -84,7 +84,7 @@ class PolishHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->isEpiphany());
+        $this->assertSame($validity, $date->isEpiphanyinPoland());
     }
 
     public function provideEpiphanyData()

@@ -30,7 +30,7 @@ trait PolishDates
             return $this->month === 5 && $this->day === 1;
         });
 
-        Carbon::macro('isEpiphany', function () {
+        Carbon::macro('isEpiphanyinPoland', function () {
             // In Poland, Epiphany is a national holiday since 2011
 
             if ($this->year < 2011) {
