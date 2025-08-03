@@ -127,16 +127,17 @@ class USHolidaysTest extends TestCase
     /**
      * @dataProvider provideAmericanThanksgivingData
      */
-    public function test_it_knows_us_thanksgiving_day($date, $validity)
+    public function test_it_knows_us_thanksgiving_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isAmericanThanksgiving());
     }
 
-    public function provideAmericanThanksgivingData()
+    public function provideAmericanThanksgivingData(): array
     {
         return [
+            '2023-09-28' => ['2023-09-28', false],
             '1788-11-27' => ['1788-11-27', false],
             '1789-11-26' => ['1789-11-26', true],
             '2019-11-27' => ['2019-11-27', false],

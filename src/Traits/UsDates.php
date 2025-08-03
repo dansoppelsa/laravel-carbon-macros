@@ -68,7 +68,7 @@ trait UsDates
                 return false;
             }
 
-            return $this->clone()->nthOfMonth(4, static::THURSDAY)->day === $this->day;
+            return $this->month === 11 && $this->clone()->nthOfMonth(4, static::THURSDAY)->day === $this->day;
         });
 
         Carbon::macro('isPresidentsDay', function () {
