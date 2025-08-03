@@ -1,9 +1,9 @@
 ### Tunisian Dates
 
-- isTunisianIndependenceDay
-- isTunisianMartyrsDay
-- isTunisianLabourDay
-- isTunisianRepublicDay
-- isTunisianWomensDay
 - isTunisianEvacuationDay
+- isTunisianIndependenceDay
+- isTunisianLabourDay
+- isTunisianMartyrsDay
+- isTunisianRepublicDay
 - isTunisianRevolutionAndYouthDay
+- isTunisianWomensDay

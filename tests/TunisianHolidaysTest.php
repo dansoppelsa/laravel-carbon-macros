@@ -9,14 +9,14 @@ class TunisianHolidaysTest extends TestCase
     /**
      * @dataProvider provideTunisianIndependenceDay
      */
-    public function test_it_recognizes_tunisian_independence_day($date, $validity)
+    public function test_it_recognizes_tunisian_independence_day($date, $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isTunisianIndependenceDay());
     }
 
-    public function provideTunisianIndependenceDay()
+    public function provideTunisianIndependenceDay(): array
     {
         return [
             '1956-03-20' => ['1956-03-20', true],
@@ -29,14 +29,14 @@ class TunisianHolidaysTest extends TestCase
     /**
      * @dataProvider provideTunisianMartyrsDay
      */
-    public function test_it_recognizes_tunisian_martyrs_day($date, $validity)
+    public function test_it_recognizes_tunisian_martyrs_day($date, $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isTunisianMartyrsDay());
     }
 
-    public function provideTunisianMartyrsDay()
+    public function provideTunisianMartyrsDay(): array
     {
         return [
             '1956-04-09' => ['1956-04-09', true],
@@ -49,14 +49,14 @@ class TunisianHolidaysTest extends TestCase
     /**
      * @dataProvider provideTunisianLabourDay
      */
-    public function test_it_recognizes_tunisian_labour_day($date, $validity)
+    public function test_it_recognizes_tunisian_labour_day($date, $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isTunisianLabourDay());
     }
 
-    public function provideTunisianLabourDay()
+    public function provideTunisianLabourDay(): array
     {
         return [
             '2022-03-20' => ['2022-03-20', false],
@@ -69,14 +69,14 @@ class TunisianHolidaysTest extends TestCase
     /**
      * @dataProvider provideTunisianRepublicDay
      */
-    public function test_it_recognizes_tunisian_republic_day($date, $validity)
+    public function test_it_recognizes_tunisian_republic_day($date, $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isTunisianRepublicDay());
     }
 
-    public function provideTunisianRepublicDay()
+    public function provideTunisianRepublicDay(): array
     {
         return [
             '1956-07-25' => ['1956-07-25', true],
@@ -89,14 +89,14 @@ class TunisianHolidaysTest extends TestCase
     /**
      * @dataProvider provideTunisianWomensDay
      */
-    public function test_it_recognizes_tunisian_womens_day($date, $validity)
+    public function test_it_recognizes_tunisian_womens_day($date, $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isTunisianWomensDay());
     }
 
-    public function provideTunisianWomensDay()
+    public function provideTunisianWomensDay(): array
     {
         return [
             '1956-08-13' => ['1956-08-13', false],
@@ -109,14 +109,14 @@ class TunisianHolidaysTest extends TestCase
     /**
      * @dataProvider provideTunisianEvacuationDay
      */
-    public function test_it_recognizes_tunisian_evacuation_day($date, $validity)
+    public function test_it_recognizes_tunisian_evacuation_day($date, $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isTunisianEvacuationDay());
     }
 
-    public function provideTunisianEvacuationDay()
+    public function provideTunisianEvacuationDay(): array
     {
         return [
             '1956-10-15' => ['1956-10-15', false],
@@ -129,14 +129,14 @@ class TunisianHolidaysTest extends TestCase
     /**
      * @dataProvider provideTunisianRevolutionAndYouthDay
      */
-    public function test_it_recognizes_tunisian_revolution_and_youth_day($date, $validity)
+    public function test_it_recognizes_tunisian_revolution_and_youth_day($date, $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isTunisianRevolutionAndYouthDay());
     }
 
-    public function provideTunisianRevolutionAndYouthDay()
+    public function provideTunisianRevolutionAndYouthDay(): array
     {
         return [
             '1956-12-17' => ['1956-12-17', false],

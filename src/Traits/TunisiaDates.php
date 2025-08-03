@@ -30,8 +30,7 @@ trait TunisiaDates
         });
 
         Carbon::macro('isTunisianLabourDay', function () {
-           //First of May
-
+           //First of Mays
             return $this->month === 5 && $this->day === 1;
         });
 

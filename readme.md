@@ -48,6 +48,7 @@ A handy collection of international `Illuminate\Support\Carbon` date helpers
 - [Kenya](./docs/kenya.md) 🇰🇪
 - [Netherlands](./docs/netherlands.md) 🇳🇱
 - [Sweden](./docs/sweden.md) 🇸🇪
+- [Tunisia](./docs/tunisia.md) 🇹🇳
 - [Ukraine](./docs/ukraine.md) 🇺🇦
 - [Zambia](./docs/zambia.md) 🇿🇲
 
