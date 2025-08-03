@@ -13,6 +13,8 @@ A handy collection of international `Illuminate\Support\Carbon` date helpers
 - isAllSaintsDay
 - isChristmasDay
 - isNewYearsEve
+- isOrthodoxChristmasDay
+- isOrthodoxChristmasEve
 
 ### US Dates 🇺🇸
 
@@ -47,6 +49,7 @@ A handy collection of international `Illuminate\Support\Carbon` date helpers
 - [Italy](./docs/italy.md) 🇮🇹
 - [Kenya](./docs/kenya.md) 🇰🇪
 - [Netherlands](./docs/netherlands.md) 🇳🇱
+- [North Macedonia](./docs/northmacedonia.md) 🇲🇰
 - [Poland](./docs/poland.md) 🇵🇱
 - [Sweden](./docs/sweden.md) 🇸🇪
 - [Ukraine](./docs/ukraine.md) 🇺🇦
