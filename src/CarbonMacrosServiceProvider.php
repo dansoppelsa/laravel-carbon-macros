@@ -17,6 +17,7 @@ use CarbonMacros\Traits\MultiNationalDates;
 use CarbonMacros\Traits\NorthMacedonianDates;
 use CarbonMacros\Traits\PolishDates;
 use CarbonMacros\Traits\SwedishDates;
+use CarbonMacros\Traits\TunisiaDates;
 use CarbonMacros\Traits\UkrainianDates;
 use CarbonMacros\Traits\UsDates;
 use CarbonMacros\Traits\ZambianDates;
@@ -40,6 +41,7 @@ class CarbonMacrosServiceProvider extends ServiceProvider
         NorthMacedonianDates,
         PolishDates,
         SwedishDates,
+        TunisiaDates,
         UkrainianDates,
         UsDates,
         ZambianDates;
@@ -85,5 +87,7 @@ class CarbonMacrosServiceProvider extends ServiceProvider
         $this->registerUkrainianDates();
 
         $this->registerZambianDates();
+
+        $this->registerTunisianDates();
     }
 }

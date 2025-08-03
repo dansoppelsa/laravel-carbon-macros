@@ -52,6 +52,7 @@ A handy collection of international `Illuminate\Support\Carbon` date helpers
 - [North Macedonia](./docs/northmacedonia.md) 🇲🇰
 - [Poland](./docs/poland.md) 🇵🇱
 - [Sweden](./docs/sweden.md) 🇸🇪
+- [Tunisia](./docs/tunisia.md) 🇹🇳
 - [Ukraine](./docs/ukraine.md) 🇺🇦
 - [Zambia](./docs/zambia.md) 🇿🇲
 
