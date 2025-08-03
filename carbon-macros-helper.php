@@ -89,9 +89,21 @@ namespace Illuminate\Support {
      * @method bool isNorthMacedonianDayOfPeoplesUprising
      * @method bool isNorthMacedonianIndependenceDay
      * @method bool isNorthMacedonianRepublicDay
+     * @method bool isPolishArmedForcesDay
+     * @method bool isPolishConstitutionDay
+     * @method bool isPolishEpiphany
+     * @method bool isPolishIndependenceDay
+     * @method bool isPolishLabourDay
      * @method bool isChristmasEve
      * @method bool isSwedishMidsummerDay
      * @method bool isSwedishNationalDay
+     * @method bool isTunisianEvacuationDay
+     * @method bool isTunisianIndependenceDay
+     * @method bool isTunisianLabourDay
+     * @method bool isTunisianMartyrsDay
+     * @method bool isTunisianRepublicDay
+     * @method bool isTunisianRevolutionAndYouthDay
+     * @method bool isTunisianWomensDay
      * @method bool isKupalaNight
      * @method bool isUkraineDefenderDay
      * @method bool isUkrainianConstitutionDay
