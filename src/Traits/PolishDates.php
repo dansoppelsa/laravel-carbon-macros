@@ -18,7 +18,6 @@ trait PolishDates
 
 
         Carbon::macro('isPolishConstitutionDay', function () {
-
             if ($this->year < 1990) {
                 return false;
             }
@@ -30,9 +29,8 @@ trait PolishDates
             return $this->month === 5 && $this->day === 1;
         });
 
-        Carbon::macro('isEpiphanyinPoland', function () {
+        Carbon::macro('isPolishEpiphany', function () {
             // In Poland, Epiphany is a national holiday since 2011
-
             if ($this->year < 2011) {
                 return false;
             }
@@ -44,7 +42,6 @@ trait PolishDates
         Carbon::macro('isPolishArmedForcesDay', function () {
             // Armed Forces Day is a national holiday celebrated annually on 15 August in Poland, 
             // commemorating the anniversary of the 1920 victory over Soviet Russia at the Battle of Warsaw during the Polish–Soviet War.
-
             if ($this->year < 1992) {
                 return false;
             }

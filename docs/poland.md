@@ -3,5 +3,5 @@
 - isPolishIndependenceDay
 - isPolishConstitutionDay
 - isPolishLabourDay
-- isEpiphanyinPoland
+- isPolishEpiphany
 - isPolishArmedForcesDay

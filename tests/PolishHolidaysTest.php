@@ -15,7 +15,7 @@ class PolishHolidaysTest extends TestCase
         $this->assertSame($validity, $date->isPolishIndependenceDay());
     }
 
-    public function providePolishIndependenceDayData()
+    public function providePolishIndependenceDayData(): array
     {
         return [
             '1980-11-11' => ['1980-11-11', false],
@@ -39,7 +39,7 @@ class PolishHolidaysTest extends TestCase
         $this->assertSame($validity, $date->isPolishConstitutionDay());
     }
 
-    public function providePolishConstitutionDayData()
+    public function providePolishConstitutionDayData(): array
     {
         return [
             '1979-05-03' => ['1979-05-03', false],
@@ -63,7 +63,7 @@ class PolishHolidaysTest extends TestCase
         $this->assertSame($validity, $date->isPolishLabourDay());
     }
 
-    public function providePolishLabourDayData()
+    public function providePolishLabourDayData(): array
     {
         return [
             '1986-05-01' => ['1986-05-01', true],
@@ -84,13 +84,13 @@ class PolishHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->isEpiphanyinPoland());
+        $this->assertSame($validity, $date->isPolishEpiphany());
     }
 
-    public function provideEpiphanyData()
+    public function provideEpiphanyData(): array
     {
         return [
-            '1986-08-15' => ['1986-01-06', false],
+            '1986-01-06' => ['1986-01-06', false],
             '2019-01-06' => ['2019-01-06', true],
             '2019-10-05' => ['2019-10-05', false],
             '2010-12-01' => ['2010-12-01', false],
@@ -111,7 +111,7 @@ class PolishHolidaysTest extends TestCase
         $this->assertSame($validity, $date->isPolishArmedForcesDay());
     }
 
-    public function providePolishArmedForcesDay()
+    public function providePolishArmedForcesDay(): array
     {
         return [
             '1986-08-15' => ['1986-08-15', false],
