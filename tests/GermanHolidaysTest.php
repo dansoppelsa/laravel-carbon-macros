@@ -1,20 +1,23 @@
-<?php namespace CarbonMacros;
+<?php
+
+namespace CarbonMacros;
 
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
 class GermanHolidaysTest extends TestCase
 {
-    /**
-     * @dataProvider provideGermanLabourDayData
-     */
-    function test_it_knows_german_labour_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideGermanLabourDayData')]
+    public function it_knows_german_labour_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isGermanLabourDay());
     }
 
-    function provideGermanLabourDayData()
+    public static function provideGermanLabourDayData(): array
     {
         return [
             '1994-03-16 (not labor day)' => ['1994-03-16', false],
@@ -27,17 +30,16 @@ class GermanHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideAscensionOfJesusData
-     */
-    function test_it_knows_ascension_of_jesus($date, $validity)
+    #[Test]
+    #[DataProvider('provideAscensionOfJesusData')]
+    public function it_knows_ascension_of_jesus(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isAscensionOfJesus());
     }
 
-    function provideAscensionOfJesusData()
+    public static function provideAscensionOfJesusData(): array
     {
         return [
             '2019-05-30' => ['2019-05-30', true],
@@ -50,17 +52,16 @@ class GermanHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideWhitSundayData
-     */
-    function test_it_knows_whitsunday($date, $validity)
+    #[Test]
+    #[DataProvider('provideWhitSundayData')]
+    public function it_knows_whitsunday(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isWhitSunday());
     }
 
-    function provideWhitSundayData()
+    public static function provideWhitSundayData(): array
     {
         return [
             '1990-06-09' => ['1990-06-09', false],
@@ -73,47 +74,43 @@ class GermanHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideWhitSundayData
-     */
-    function test_it_knows_whitsun($date, $validity)
+    #[Test]
+    #[DataProvider('provideWhitSundayData')]
+    public function it_knows_whitsun(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isWhitsun());
     }
 
-    /**
-     * @dataProvider provideWhitSundayData
-     */
-    function test_it_knows_pentecost($date, $validity)
+    #[Test]
+    #[DataProvider('provideWhitSundayData')]
+    public function it_knows_pentecost(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isPentecost());
     }
 
-    /**
-     * @dataProvider provideWhitSundayData
-     */
-    function test_it_knows_pentecost_sunday($date, $validity)
+    #[Test]
+    #[DataProvider('provideWhitSundayData')]
+    public function it_knows_pentecost_sunday(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isPentecostSunday());
     }
 
-    /**
-     * @dataProvider provideWhitMondayData
-     */
-    function test_it_knows_whitmonday($date, $validity)
+    #[Test]
+    #[DataProvider('provideWhitMondayData')]
+    public function it_knows_whitmonday(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isWhitMonday());
     }
 
-    function provideWhitMondayData()
+    public static function provideWhitMondayData(): array
     {
         return [
             '1990-06-10' => ['1990-06-10', false],
@@ -126,27 +123,25 @@ class GermanHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideWhitMondayData
-     */
-    function test_it_knows_pentecost_monday($date, $validity)
+    #[Test]
+    #[DataProvider('provideWhitMondayData')]
+    public function it_knows_pentecost_monday(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isPentecostMonday());
     }
 
-    /**
-     * @dataProvider provideCorpusChristiData
-     */
-    function test_it_knows_corpus_christi($date, $validity)
+    #[Test]
+    #[DataProvider('provideCorpusChristiData')]
+    public function it_knows_corpus_christi(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isCorpusChristi());
     }
 
-    function provideCorpusChristiData()
+    public static function provideCorpusChristiData(): array
     {
         return [
             '1990-06-20' => ['1990-06-20', false],
@@ -159,17 +154,16 @@ class GermanHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideGermanUnityDayData
-     */
-    function test_it_knows_german_unity_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideGermanUnityDayData')]
+    public function it_knows_german_unity_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isGermanUnityDay());
     }
 
-    function provideGermanUnityDayData()
+    public static function provideGermanUnityDayData(): array
     {
         return [
             '1990-03-10' => ['1990-03-10', false],
@@ -182,17 +176,16 @@ class GermanHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideChristmasEveData
-     */
-    function test_it_knows_heiliger_abend($date, $validity)
+    #[Test]
+    #[DataProvider('provideChristmasEveData')]
+    public function it_knows_heiliger_abend(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isHeiligerAbend());
     }
 
-    function provideChristmasEveData()
+    public static function provideChristmasEveData(): array
     {
         return [
             '1963-12-24' => ['1963-12-24', true],
@@ -207,10 +200,9 @@ class GermanHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideChristmasEveData
-     */
-    function test_it_knows_heilig_abend($date, $validity)
+    #[Test]
+    #[DataProvider('provideChristmasEveData')]
+    public function it_knows_heilig_abend(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 

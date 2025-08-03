@@ -1,20 +1,23 @@
-<?php namespace CarbonMacros;
+<?php
+
+namespace CarbonMacros;
 
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
 class AlgerianHolidaysTest extends TestCase
 {
-    /**
-     * @dataProvider provideAlgerianIndependenceDay
-     */
-    public function test_it_recognizes_algerian_independence_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideAlgerianIndependenceDay')]
+    public function it_recognizes_algerian_independence_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isAlgerianIndependenceDay());
     }
 
-    public function provideAlgerianIndependenceDay()
+    public static function provideAlgerianIndependenceDay(): array
     {
         return [
             '1962-07-05' => ['1962-07-05', true],
@@ -29,17 +32,15 @@ class AlgerianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideAlgerianRevolutionDay
-     */
-    public function test_it_recognizes_algerian_revolution_day($date, $validity)
+    #[DataProvider('provideAlgerianRevolutionDay')]
+    public function it_recognizes_algerian_revolution_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isAlgerianRevolutionDay());
     }
 
-    public function provideAlgerianRevolutionDay()
+    public static function provideAlgerianRevolutionDay(): array
     {
         return [
             '1954-11-01' => ['1954-11-01', true],
@@ -53,17 +54,15 @@ class AlgerianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideAmazighNewYear
-     */
-    public function test_it_recognizes_amazigh_new_year($date, $validity)
+    #[DataProvider('provideAmazighNewYear')]
+    public function it_recognizes_amazigh_new_year(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isAmazighNewYear());
     }
 
-    public function provideAmazighNewYear()
+    public static function provideAmazighNewYear(): array
     {
         return [
             '1976-01-12' => ['1976-01-12', true],
@@ -77,17 +76,15 @@ class AlgerianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideAlgerianLaborDay
-     */
-    public function test_it_recognizes_algerian_labor_day($date, $validity)
+    #[DataProvider('provideAlgerianLaborDay')]
+    public function it_recognizes_algerian_labor_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isAlgerianLaborDay());
     }
 
-    public function provideAlgerianLaborDay()
+    public static function provideAlgerianLaborDay(): array
     {
         return [
             '1994-03-16' => ['1994-03-16', false],

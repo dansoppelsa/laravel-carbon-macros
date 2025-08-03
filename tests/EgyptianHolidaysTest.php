@@ -1,21 +1,23 @@
-<?php namespace CarbonMacros;
+<?php
+
+namespace CarbonMacros;
 
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
 class EgyptianHolidaysTest extends TestCase
 {
-
-    /**
-     * @dataProvider provideEgyptianChristmasDayData
-     */
-    public function test_it_knows_egyptian_christmas_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideEgyptianChristmasDayData')]
+    public function it_knows_egyptian_christmas_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isEgyptianChristmasDay());
     }
 
-    public function provideEgyptianChristmasDayData()
+    public static function provideEgyptianChristmasDayData(): array
     {
         return [
             '1900-12-25' => ['1900-12-25', false],
@@ -32,17 +34,16 @@ class EgyptianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideEgyptianNationalPoliceDayData
-     */
-    public function test_it_knows_egyptian_national_police_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideEgyptianNationalPoliceDayData')]
+    public function it_knows_egyptian_national_police_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isEgyptianNationalPoliceDay());
     }
 
-    public function provideEgyptianNationalPoliceDayData()
+    public static function provideEgyptianNationalPoliceDayData(): array
     {
         return [
             '1900-12-25' => ['1900-12-25', false],
@@ -60,17 +61,16 @@ class EgyptianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideEgyptian2011RevolutionDayData
-     */
-    public function test_it_knows_egyptian_2011_revolution_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideEgyptian2011RevolutionDayData')]
+    public function it_knows_egyptian_2011_revolution_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isEgyptian2011RevolutionDay());
     }
 
-    public function provideEgyptian2011RevolutionDayData()
+    public static function provideEgyptian2011RevolutionDayData(): array
     {
         return [
             '1900-12-25' => ['1900-12-25', false],
@@ -90,17 +90,16 @@ class EgyptianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideEgyptianSinaLiberationDayData
-     */
-    public function test_it_knows_egyptian_sina_liberation_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideEgyptianSinaLiberationDayData')]
+    public function it_knows_egyptian_sina_liberation_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isEgyptianSinaLiberationDay());
     }
 
-    public function provideEgyptianSinaLiberationDayData()
+    public static function provideEgyptianSinaLiberationDayData(): array
     {
         return [
             '1900-12-25' => ['1900-12-25', false],
@@ -120,17 +119,16 @@ class EgyptianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideEgyptianLabourDayData
-     */
-    public function test_it_knows_egyptian_labour_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideEgyptianLabourDayData')]
+    public function it_knows_egyptian_labour_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isEgyptianLabourDay());
     }
 
-    public function provideEgyptianLabourDayData()
+    public static function provideEgyptianLabourDayData(): array
     {
         return [
             '1900-12-25' => ['1900-12-25', false],
@@ -149,17 +147,16 @@ class EgyptianHolidaysTest extends TestCase
     }
 
 
-    /**
-     * @dataProvider provideEgyptian30JuneRevolutionDayData
-     */
-    public function test_it_knows_egyptian_30_june_revolution_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideEgyptian30JuneRevolutionDayData')]
+    public function it_knows_egyptian_30_june_revolution_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isEgyptian30JuneRevolutionDay());
     }
 
-    public function provideEgyptian30JuneRevolutionDayData()
+    public static function provideEgyptian30JuneRevolutionDayData(): array
     {
         return [
             '1900-06-30' => ['1900-06-30', false],
@@ -176,17 +173,16 @@ class EgyptianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideEgyptian23JulyRevolutionDayData
-     */
-    public function test_it_knows_egyptian_23_july_revolution_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideEgyptian23JulyRevolutionDayData')]
+    public function it_knows_egyptian_23_july_revolution_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isEgyptian23JulyRevolutionDay());
     }
 
-    public function provideEgyptian23JulyRevolutionDayData()
+    public static function provideEgyptian23JulyRevolutionDayData(): array
     {
         return [
             '1900-07-23' => ['1900-07-23', false],
@@ -205,17 +201,16 @@ class EgyptianHolidaysTest extends TestCase
     }
 
 
-    /**
-     * @dataProvider provideEgyptian6OctoberVictoryDayData
-     */
-    public function test_it_knows_egyptian_6_october_victory_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideEgyptian6OctoberVictoryDayData')]
+    public function it_knows_egyptian_6_october_victory_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isEgyptian6OctoberVictoryDay());
     }
 
-    public function provideEgyptian6OctoberVictoryDayData()
+    public static function provideEgyptian6OctoberVictoryDayData(): array
     {
         return [
             '1900-10-06' => ['1900-10-06', false],

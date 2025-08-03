@@ -1,20 +1,23 @@
-<?php namespace CarbonMacros;
+<?php
+
+namespace CarbonMacros;
 
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
 class CanadianHolidaysTest extends TestCase
 {
-    /**
-     * @dataProvider provideFamilyDayData
-     */
-    public function test_it_knows_family_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideFamilyDayData')]
+    public function it_knows_family_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isFamilyDay());
     }
 
-    public function provideFamilyDayData()
+    public static function provideFamilyDayData(): array
     {
         return [
             '1989-02-20' => ['1989-02-20', false],
@@ -27,17 +30,16 @@ class CanadianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideVictoriaDayData
-     */
-    public function test_it_knows_victoria_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideVictoriaDayData')]
+    public function it_knows_victoria_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isVictoriaDay());
     }
 
-    public function provideVictoriaDayData()
+    public static function provideVictoriaDayData(): array
     {
         return [
             '2018-05-20' => ['2018-05-20', false],
@@ -55,17 +57,16 @@ class CanadianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideCanadaDayData
-     */
-    public function test_it_knows_canada_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideCanadaDayData')]
+    public function it_knows_canada_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isCanadaDay());
     }
 
-    public function provideCanadaDayData()
+    public static function provideCanadaDayData(): array
     {
         return [
             '1970-06-30' => ['1970-06-30', false],
@@ -80,17 +81,16 @@ class CanadianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideLabourDayData
-     */
-    public function test_it_knows_labour_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideLabourDayData')]
+    public function it_knows_labour_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isLabourDay());
     }
 
-    public function provideLabourDayData()
+    public static function provideLabourDayData(): array
     {
         return [
             '1893-09-04' => ['1893-09-04', false],
@@ -105,17 +105,16 @@ class CanadianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideCanadianThanksgivingData
-     */
-    public function test_it_knows_canadian_thanksgiving($date, $validity)
+    #[Test]
+    #[DataProvider('provideCanadianThanksgivingData')]
+    public function it_knows_canadian_thanksgiving(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isCanadianThanksgiving());
     }
 
-    public function provideCanadianThanksgivingData()
+    public static function provideCanadianThanksgivingData(): array
     {
         return [
             '1956-10-08' => ['1956-10-08', false],
@@ -129,17 +128,16 @@ class CanadianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideRemembranceDayData
-     */
-    public function test_it_knows_remembrance_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideRemembranceDayData')]
+    public function it_knows_remembrance_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isRemembranceDay());
     }
 
-    public function provideRemembranceDayData()
+    public static function provideRemembranceDayData(): array
     {
         return [
             '1900-11-11' => ['1900-11-11', false],
@@ -153,17 +151,16 @@ class CanadianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideBoxingDayData
-     */
-    public function test_it_knows_boxing_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideBoxingDayData')]
+    public function it_knows_boxing_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isBoxingDay());
     }
 
-    public function provideBoxingDayData()
+    public static function provideBoxingDayData(): array
     {
         return [
             '1950-12-26' => ['1950-12-26', true],
@@ -174,17 +171,16 @@ class CanadianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideCivicHolidayData
-     */
-    public function test_it_knows_the_canadian_civic_holiday($date, $validity)
+    #[Test]
+    #[DataProvider('provideCivicHolidayData')]
+    public function it_knows_the_canadian_civic_holiday(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isCivicHoliday());
     }
 
-    public function provideCivicHolidayData()
+    public static function provideCivicHolidayData(): array
     {
         return [
             '1970-08-03' => ['1970-08-03', true],

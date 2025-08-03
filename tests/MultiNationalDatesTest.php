@@ -1,20 +1,24 @@
-<?php namespace CarbonMacros;
+<?php
+
+namespace CarbonMacros;
 
 use Illuminate\Support\Carbon;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
+
 class MultiNationalDatesTest extends TestCase
 {
-    /**
-     * @dataProvider provideNewYearsDayData
-     */
-    public function test_it_knows_new_years_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideNewYearsDayData')]
+    public function it_knows_new_years_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isNewYearsDay());
     }
 
-    public function provideNewYearsDayData(): array
+    public static function provideNewYearsDayData(): array
     {
         return [
             '1963-11-22' => ['1963-11-22', false],
@@ -28,17 +32,16 @@ class MultiNationalDatesTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideEasterSundayData
-     */
-    public function test_it_knows_easter_sunday($date, $validity)
+    #[Test]
+    #[DataProvider('provideEasterSundayData')]
+    public function it_knows_easter_sunday(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isEasterSunday());
     }
 
-    public function provideEasterSundayData(): array
+    public static function provideEasterSundayData(): array
     {
         return [
             '1905-04-23' => ['1905-04-23', true],
@@ -55,17 +58,16 @@ class MultiNationalDatesTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideGoodFridayData
-     */
-    public function test_it_knows_good_friday($date, $validity)
+    #[Test]
+    #[DataProvider('provideGoodFridayData')]
+    public function it_knows_good_friday(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isGoodFriday());
     }
 
-    public function provideGoodFridayData(): array
+    public static function provideGoodFridayData(): array
     {
         return [
             '1905-04-21' => ['1905-04-21', true],
@@ -83,17 +85,16 @@ class MultiNationalDatesTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideAllSaintsDayData
-     */
-    public function test_it_recognizes_all_saints_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideAllSaintsDayData')]
+    public function it_recognizes_all_saints_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isAllSaintsDay());
     }
 
-    public function provideAllSaintsDayData(): array
+    public static function provideAllSaintsDayData(): array
     {
         return [
             '1982-11-01' => ['1982-11-01', true],
@@ -108,17 +109,16 @@ class MultiNationalDatesTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideChristmasDayData
-     */
-    public function test_it_knows_christmas_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideChristmasDayData')]
+    public function it_knows_christmas_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isChristmasDay());
     }
 
-    public function provideChristmasDayData(): array
+    public static function provideChristmasDayData(): array
     {
         return [
             '1900-12-25' => ['1900-12-25', true],
@@ -135,17 +135,16 @@ class MultiNationalDatesTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideNewYearsEveData
-     */
-    public function test_it_knows_new_years_eve($date, $validity)
+    #[Test]
+    #[DataProvider('provideNewYearsEveData')]
+    public function it_knows_new_years_eve(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isNewYearsEve());
     }
 
-    public function provideNewYearsEveData(): array
+    public static function provideNewYearsEveData(): array
     {
         return [
             '1800-12-31' => ['1800-12-31', true],
@@ -158,17 +157,16 @@ class MultiNationalDatesTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideOrthodoxChristmasEveData
-     */
-    public function test_it_knows_orthodox_christmas_eve($date, $validity): void
+    #[Test]
+    #[DataProvider('provideOrthodoxChristmasEveData')]
+    public function it_knows_orthodox_christmas_eve(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isOrthodoxChristmasEve());
     }
 
-    public function provideOrthodoxChristmasEveData(): array
+    public static function provideOrthodoxChristmasEveData(): array
     {
         return [
             '1900-01-06' => ['1900-01-06', true],
@@ -181,18 +179,16 @@ class MultiNationalDatesTest extends TestCase
         ];
     }
 
-    // add test for Orthodox Christmas Day
-    /**
-     * @dataProvider provideOrthodoxChristmasDayData
-     */
-    public function test_it_knows_orthodox_christmas_day($date, $validity): void
+    #[Test]
+    #[DataProvider('provideOrthodoxChristmasDayData')]
+    public function it_knows_orthodox_christmas_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isOrthodoxChristmasDay());
     }
 
-    public function provideOrthodoxChristmasDayData(): array
+    public static function provideOrthodoxChristmasDayData(): array
     {
         return [
             '1900-01-07' => ['1900-01-07', true],

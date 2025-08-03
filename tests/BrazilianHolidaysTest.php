@@ -1,20 +1,23 @@
-<?php namespace CarbonMacros;
+<?php
+
+namespace CarbonMacros;
 
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
 class BrazilianHolidaysTest extends TestCase
 {
-    /**
-     * @dataProvider provideTiradentesDayData
-     */
-    public function test_it_recognizes_tiradentes_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideTiradentesDayData')]
+    public function it_recognizes_tiradentes_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isTiradentesDay());
     }
 
-    public function provideTiradentesDayData()
+    public static function provideTiradentesDayData(): array
     {
         return [
             '1963-04-21' => ['1963-04-21', true],
@@ -25,17 +28,16 @@ class BrazilianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideBrazilianLaborDayData
-     */
-    public function test_it_recognizes_brazilian_labor_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideBrazilianLaborDayData')]
+    public function it_recognizes_brazilian_labor_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isBrazilianLaborDay());
     }
 
-    public function provideBrazilianLaborDayData()
+    public static function provideBrazilianLaborDayData(): array
     {
         return [
             '1994-03-16 (not labor day)' => ['1994-03-16', false],
@@ -48,17 +50,16 @@ class BrazilianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideBrazilianIndependenceDayData
-     */
-    public function test_it_recognizes_brazilian_independence_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideBrazilianIndependenceDayData')]
+    public function it_recognizes_brazilian_independence_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isBrazilianIndependenceDay());
     }
 
-    public function provideBrazilianIndependenceDayData()
+    public static function provideBrazilianIndependenceDayData(): array
     {
         return [
             '1963-09-07' => ['1963-09-07', true],
@@ -69,17 +70,16 @@ class BrazilianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideDayOfOurLadyAparecidaData
-     */
-    public function test_it_recognizes_the_day_of_Our_Lady_Aparecida($date, $validity)
+    #[Test]
+    #[DataProvider('provideDayOfOurLadyAparecidaData')]
+    public function it_recognizes_the_day_of_Our_Lady_Aparecida(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isTheDayOfOurLadyAparecida());
     }
 
-    public function provideDayOfOurLadyAparecidaData()
+    public static function provideDayOfOurLadyAparecidaData(): array
     {
         return [
             '1963-10-12' => ['1963-10-12', true],
@@ -90,17 +90,16 @@ class BrazilianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideBrazilianRepublicProclamationDay
-     */
-    public function test_it_recognizes_the_brazilian_republic_proclamation_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideBrazilianRepublicProclamationDay')]
+    public function it_recognizes_the_brazilian_republic_proclamation_day($date, $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isBrazilianRepublicProclamationDay());
     }
 
-    public function provideBrazilianRepublicProclamationDay()
+    public static function provideBrazilianRepublicProclamationDay(): array
     {
         return [
             '1963-11-15`' => ['1963-11-15', true],

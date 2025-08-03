@@ -1,25 +1,23 @@
 <?php
+
 namespace CarbonMacros;
 
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
 class IndianHolidaysTest extends TestCase
 {
-
-    /**
-     * @dataProvider provideRepublicDayData
-     */
-    public function test_it_recognizes_republic_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideRepublicDayData')]
+    public function it_recognizes_republic_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isIndianRepublicDay());
     }
 
-    /**
-     * @return array[]
-     */
-    public function provideRepublicDayData()
+    public static function provideRepublicDayData(): array
     {
         return [
             '1950-01-26' => ['1950-01-26', true],
@@ -31,20 +29,17 @@ class IndianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideIndependenceDayData
-     */
-    public function test_it_recognizes_independence_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideIndependenceDayData')]
+    public function it_recognizes_independence_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isIndianIndependenceDay());
     }
 
-    /**
-     * @return array[]
-     */
-    public function provideIndependenceDayData()
+
+    public static function provideIndependenceDayData(): array
     {
         return [
             '1947-08-15' => ['1947-08-15', true],
@@ -56,20 +51,17 @@ class IndianHolidaysTest extends TestCase
     }
 
 
-    /**
-     * @dataProvider provideGandhiJayantiData
-     */
-    public function test_it_recognizes_gandhi_jayanti($date, $validity)
+    #[Test]
+    #[DataProvider('provideGandhiJayantiData')]
+    public function it_recognizes_gandhi_jayanti(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isGandhiJayanti());
     }
 
-    /**
-     * @return array[]
-     */
-    public function provideGandhiJayantiData()
+    
+    public static function provideGandhiJayantiData(): array
     {
         return [
             '1869-10-02' => ['1869-10-02', true],

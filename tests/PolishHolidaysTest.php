@@ -1,21 +1,23 @@
-<?php namespace CarbonMacros;
+<?php
+
+namespace CarbonMacros;
 
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
 class PolishHolidaysTest extends TestCase
 {
-
-    /**
-     * @dataProvider providePolishIndependenceDayData
-     */
-    public function test_it_knows_polish_independence_day($date, $validity)
+    #[Test]
+    #[DataProvider('providePolishIndependenceDayData')]
+    public function it_knows_polish_independence_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isPolishIndependenceDay());
     }
 
-    public function providePolishIndependenceDayData(): array
+    public static function providePolishIndependenceDayData(): array
     {
         return [
             '1980-11-11' => ['1980-11-11', false],
@@ -29,17 +31,16 @@ class PolishHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider providePolishConstitutionDayData
-     */
-    public function test_it_knows_polish_constitution_day($date, $validity)
+    #[Test]
+    #[DataProvider('providePolishConstitutionDayData')]
+    public function it_knows_polish_constitution_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isPolishConstitutionDay());
     }
 
-    public function providePolishConstitutionDayData(): array
+    public static function providePolishConstitutionDayData(): array
     {
         return [
             '1979-05-03' => ['1979-05-03', false],
@@ -53,17 +54,16 @@ class PolishHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider providePolishLabourDayData
-     */
-    public function test_it_knows_polish_labour_day($date, $validity)
+    #[Test]
+    #[DataProvider('providePolishLabourDayData')]
+    public function it_knows_polish_labour_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isPolishLabourDay());
     }
 
-    public function providePolishLabourDayData(): array
+    public static function providePolishLabourDayData(): array
     {
         return [
             '1986-05-01' => ['1986-05-01', true],
@@ -77,17 +77,16 @@ class PolishHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideEpiphanyData
-     */
-    public function test_it_knows_epiphany($date, $validity)
+    #[Test]
+    #[DataProvider('provideEpiphanyData')]
+    public function it_knows_epiphany(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isPolishEpiphany());
     }
 
-    public function provideEpiphanyData(): array
+    public static function provideEpiphanyData(): array
     {
         return [
             '1986-01-06' => ['1986-01-06', false],
@@ -101,17 +100,16 @@ class PolishHolidaysTest extends TestCase
         ];
     }
 
-     /**
-     * @dataProvider providePolishArmedForcesDay
-     */
-    public function test_it_knows_polish_armed_forces_day($date, $validity)
+    #[Test]
+    #[DataProvider('providePolishArmedForcesDay')]
+    public function it_knows_polish_armed_forces_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isPolishArmedForcesDay());
     }
 
-    public function providePolishArmedForcesDay(): array
+    public static function providePolishArmedForcesDay(): array
     {
         return [
             '1986-08-15' => ['1986-08-15', false],

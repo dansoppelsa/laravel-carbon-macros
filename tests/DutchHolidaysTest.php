@@ -4,53 +4,48 @@
 namespace CarbonMacros;
 
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
 class DutchHolidaysTest extends TestCase
 {
-    /**
-     * @dataProvider provideDutchNationalDayData
-     */
-    public function test_it_recognizes_dutch_national_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideDutchNationalDayData')]
+    public function it_recognizes_dutch_national_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isDutchNationalDay());
     }
 
-    /**
-     * @dataProvider provideDutchRemembranceDayData
-     */
-    public function test_it_recognizes_dutch_rememberance_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideDutchRemembranceDayData')]
+    public function it_recognizes_dutch_rememberance_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isDutchRemembranceDay());
     }
 
-    /**
-     * @dataProvider provideDutchLiberationDayData
-     */
-    public function test_it_recognizes_dutch_liberation_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideDutchLiberationDayData')]
+    public function it_recognizes_dutch_liberation_day(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isDutchLiberationDay());
     }
 
-    /**
-     * @dataProvider provideSaintNicholasEveData
-     */
-    public function test_it_recognizes_saint_nicholas_eve($date, $validity)
+    #[Test]
+    #[DataProvider('provideSaintNicholasEveData')]
+    public function it_recognizes_saint_nicholas_eve(string $date, bool $validity)
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isSaintNicholasEve());
     }
 
-    /**
-     * @return array[]
-     */
-    public function provideDutchNationalDayData()
+    public static function provideDutchNationalDayData(): array
     {
         return [
             '1930-04-30' => ['1930-04-30', false],
@@ -68,10 +63,8 @@ class DutchHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @return array[]
-     */
-    public function provideDutchRemembranceDayData()
+    
+    public static function provideDutchRemembranceDayData(): array
     {
         return [
             '1944-05-04' => ['1944-05-04', false],
@@ -80,10 +73,8 @@ class DutchHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @return array[]
-     */
-    public function provideDutchLiberationDayData()
+    
+    public static function provideDutchLiberationDayData(): array
     {
         return [
             '1944-05-05' => ['1944-05-05', false],
@@ -92,10 +83,8 @@ class DutchHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @return array[]
-     */
-    public function provideSaintNicholasEveData()
+    
+    public static function provideSaintNicholasEveData(): array
     {
         return [
             '2012-12-04' => ['2012-12-04', false],

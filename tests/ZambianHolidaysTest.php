@@ -3,20 +3,21 @@
 namespace CarbonMacros;
 
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
 class ZambianHolidaysTest extends TestCase
 {
-    /**
-     * @dataProvider provideZambianIndependenceDayData
-     */
-    public function test_it_recognizes_zambian_independence_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideZambianIndependenceDayData')]
+    public function it_recognizes_zambian_independence_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isZambianIndependenceDay());
     }
 
-    public function provideZambianIndependenceDayData()
+    public static function provideZambianIndependenceDayData(): array
     {
         return [
             '1963-10-24' => ['1964-10-24', true],
@@ -26,17 +27,17 @@ class ZambianHolidaysTest extends TestCase
             '1800-02-18' => ['1800-02-18', false],
         ];
     }
-    /**
-     * @dataProvider provideZambianLabourDayData
-     */
-    public function test_it_recognizes_zambian_labour_day($date, $validity)
+
+    #[Test]
+    #[DataProvider('provideZambianLabourDayData')]
+    public function it_recognizes_zambian_labour_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isZambianLabourDay());
     }
 
-    public function provideZambianLabourDayData()
+    public static function provideZambianLabourDayData(): array
     {
         return [
             '1963-05-01' => ['1963-05-01', true],
@@ -46,17 +47,17 @@ class ZambianHolidaysTest extends TestCase
             '2010-05-01' => ['2010-05-01', true],
         ];
     }
-    /**
-     * @dataProvider provideZambianWomensDayData
-     */
-    public function test_it_recognizes_zambian_womens_day($date, $validity)
+
+    #[Test]
+    #[DataProvider('provideZambianWomensDayData')]
+    public function it_recognizes_zambian_womens_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isZambianWomensDay());
     }
 
-    public function provideZambianWomensDayData()
+    public static function provideZambianWomensDayData(): array
     {
         return [
             '1997-03-08' => ['1997-03-08', false],
@@ -71,17 +72,17 @@ class ZambianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideZambianYouthDayData
-     */
-    public function test_it_recognizes_zambian_youth_day($date, $validity)
+
+    #[Test]
+    #[DataProvider('provideZambianYouthDayData')]
+    public function it_recognizes_zambian_youth_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isZambianYouthDay());
     }
 
-    public function provideZambianYouthDayData()
+    public static function provideZambianYouthDayData(): array
     {
         return [
             '1963-03-12' => ['1963-03-12', false],
@@ -91,17 +92,17 @@ class ZambianHolidaysTest extends TestCase
             '2025-03-12' => ['2025-03-12', true],
         ];
     }
-    /**
-     * @dataProvider provideZambianAfricanUnityDayData
-     */
-    public function test_it_recognizes_zambian_african_unity_day($date, $validity)
+
+    #[Test]
+    #[DataProvider('provideZambianAfricanUnityDayData')]
+    public function it_recognizes_zambian_african_unity_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isZambianAfricanUnityDay());
     }
 
-    public function provideZambianAfricanUnityDayData()
+    public static function provideZambianAfricanUnityDayData(): array
     {
         return [
             '1963-03-12' => ['1963-03-12', false],
@@ -111,17 +112,17 @@ class ZambianHolidaysTest extends TestCase
             '2025-05-25' => ['2025-05-25', true],
         ];
     }
-    /**
-     * @dataProvider provideZambianAfricaDayData
-     */
-    public function test_it_recognizes_zambian_africa_day($date, $validity)
+
+    #[Test]
+    #[DataProvider('provideZambianAfricaDayData')]
+    public function it_recognizes_zambian_africa_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isZambianAfricaDay());
     }
 
-    public function provideZambianAfricaDayData()
+    public static function provideZambianAfricaDayData(): array
     {
         return [
             '1963-03-12' => ['1963-03-12', false],
@@ -131,17 +132,17 @@ class ZambianHolidaysTest extends TestCase
             '2025-05-25' => ['2025-05-25', true],
         ];
     }
-    /**
-     * @dataProvider provideZambianHeroesDayData
-     */
-    public function test_it_recognizes_zambian_heroes_day($date, $validity)
+
+    #[Test]
+    #[DataProvider('provideZambianHeroesDayData')]
+    public function it_recognizes_zambian_heroes_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isZambianHeroesDay());
     }
 
-    public function provideZambianHeroesDayData()
+    public static function provideZambianHeroesDayData(): array
     {
         return [
             '1963-07-01' => ['1963-07-01', false],
@@ -151,17 +152,17 @@ class ZambianHolidaysTest extends TestCase
             '2025-07-07' => ['2025-07-07', true],
         ];
     }
-    /**
-     * @dataProvider provideZambianUnityDayData
-     */
-    public function test_it_recognizes_zambian_unity_day($date, $validity)
+
+    #[Test]
+    #[DataProvider('provideZambianUnityDayData')]
+    public function it_recognizes_zambian_unity_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isZambianUnityDay());
     }
 
-    public function provideZambianUnityDayData()
+    public static function provideZambianUnityDayData(): array
     {
         return [
             '1963-01-02' => ['1963-01-02', false],
@@ -171,17 +172,17 @@ class ZambianHolidaysTest extends TestCase
             '2025-07-08' => ['2025-07-08', true],
         ];
     }
-    /**
-     * @dataProvider provideZambianFarmersDayData
-     */
-    public function test_it_recognizes_zambian_farmers_day($date, $validity)
+
+    #[Test]
+    #[DataProvider('provideZambianFarmersDayData')]
+    public function it_recognizes_zambian_farmers_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isZambianFarmersDay());
     }
 
-    public function provideZambianFarmersDayData()
+    public static function provideZambianFarmersDayData(): array
     {
         return [
             '1963-08-02' => ['1963-08-02', false],
@@ -191,17 +192,17 @@ class ZambianHolidaysTest extends TestCase
             '2025-08-04' => ['2025-08-04', true],
         ];
     }
-    /**
-     * @dataProvider provideZambianNationalPrayerDayData
-     */
-    public function test_it_recognizes_zambian_national_prayer_day($date, $validity)
+
+    #[Test]
+    #[DataProvider('provideZambianNationalPrayerDayData')]
+    public function it_recognizes_zambian_national_prayer_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isZambianNationalPrayerDay());
     }
 
-    public function provideZambianNationalPrayerDayData()
+    public static function provideZambianNationalPrayerDayData(): array
     {
         return [
             '1963-10-02' => ['1963-10-02', false],

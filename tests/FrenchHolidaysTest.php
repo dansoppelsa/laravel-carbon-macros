@@ -3,83 +3,75 @@
 namespace CarbonMacros;
 
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
 class FrenchHolidaysTest extends TestCase
 {
-    /**
-     * @dataProvider provideAssumptionDayData
-     */
-    public function test_it_recognizes_assumption_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideAssumptionDayData')]
+    public function it_recognizes_assumption_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isAssumptionDay());
     }
 
-    /**
-     * @dataProvider provideAscensionDayData
-     */
-    public function test_it_recognizes_ascension_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideAscensionDayData')]
+    public function it_recognizes_ascension_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isAscensionDay());
     }
 
-    /**
-     * @dataProvider provideFirstWarArmisticeDayData
-     */
-    public function test_it_recognizes_first_war_armistice_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideFirstWarArmisticeDayData')]
+    public function it_recognizes_first_war_armistice_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isFirstWarArmisticeDay());
     }
 
-    /**
-     * @dataProvider provideEasterMondayDayData
-     */
-    public function test_it_recognizes_easter_monday_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideEasterMondayDayData')]
+    public function it_recognizes_easter_monday_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isEasterMonday());
     }
 
-    /**
-     * @dataProvider provideFrenchNationalDayData
-     */
-    public function test_it_recognizes_french_national_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideFrenchNationalDayData')]
+    public function it_recognizes_french_national_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isFrenchNationalDay());
     }
 
-    /**
-     * @dataProvider providePentecostDayData
-     */
-    public function test_it_recognizes_pentecost_day($date, $validity)
+    #[Test]
+    #[DataProvider('providePentecostDayData')]
+    public function it_recognizes_pentecost_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isPentecostDay());
     }
 
-    /**
-     * @dataProvider provideSecondWarArmisticeDayData
-     */
-    public function test_it_recognizes_second_war_armistice_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideSecondWarArmisticeDayData')]
+    public function it_recognizes_second_war_armistice_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isSecondWarArmisticeDay());
     }
 
-    /**
-     * @return array[]
-     */
-    public function provideAssumptionDayData()
+    public static function provideAssumptionDayData(): array
     {
         return [
             '1982-08-15' => ['1982-08-15', true],
@@ -88,10 +80,7 @@ class FrenchHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @return array[]
-     */
-    public function provideAscensionDayData()
+    public static function provideAscensionDayData(): array
     {
         return [
             '2019-05-30' => ['2019-05-30', true],
@@ -103,10 +92,7 @@ class FrenchHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @return array[]
-     */
-    public function provideEasterMondayDayData()
+    public static function provideEasterMondayDayData(): array
     {
         return [
             '2019-04-22' => ['2019-04-22', true],
@@ -118,10 +104,7 @@ class FrenchHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @return array[]
-     */
-    public function provideFirstWarArmisticeDayData()
+    public static function provideFirstWarArmisticeDayData(): array
     {
         return [
             '1982-11-11' => ['1982-11-11', true],
@@ -131,10 +114,7 @@ class FrenchHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @return array[]
-     */
-    public function provideFrenchNationalDayData()
+    public static function provideFrenchNationalDayData(): array
     {
         return [
             '1982-07-14' => ['1982-07-14', true],
@@ -146,10 +126,7 @@ class FrenchHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @return array[]
-     */
-    public function providePentecostDayData()
+    public static function providePentecostDayData(): array
     {
         return [
             '2019-06-09' => ['2019-06-09', true],
@@ -161,10 +138,7 @@ class FrenchHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @return array[]
-     */
-    public function provideSecondWarArmisticeDayData()
+    public static function provideSecondWarArmisticeDayData(): array
     {
         return [
             '1982-05-08' => ['1982-05-08', true],

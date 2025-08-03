@@ -1,20 +1,23 @@
-<?php namespace CarbonMacros;
+<?php
+
+namespace CarbonMacros;
 
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
 class KenyanHolidaysTest extends TestCase
 {
-    /**
-     * @dataProvider provideKenyanIndependenceDayData
-     */
-    public function test_it_recognizes_kenyan_independence_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideKenyanIndependenceDayData')]
+    public function it_recognizes_kenyan_independence_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isKenyanIndependenceDay());
     }
 
-    public function provideKenyanIndependenceDayData()
+    public static function provideKenyanIndependenceDayData(): array
     {
         return [
             '1963-12-12' => ['1963-12-12', true],
@@ -25,17 +28,16 @@ class KenyanHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideKenyanJamhuriDayData
-     */
-    public function test_it_recognizes_kenyan_jamhuri_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideKenyanJamhuriDayData')]
+    public function it_recognizes_kenyan_jamhuri_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isKenyanJamhuriDay());
     }
 
-    public function provideKenyanJamhuriDayData()
+    public static function provideKenyanJamhuriDayData(): array
     {
         return [
             '1963-12-12' => ['1963-12-12', true],
@@ -46,17 +48,16 @@ class KenyanHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideKenyanLabourDayData
-     */
-    public function test_it_recognizes_kenyan_labour_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideKenyanLabourDayData')]
+    public function it_recognizes_kenyan_labour_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isKenyanLabourDay());
     }
 
-    public function provideKenyanLabourDayData()
+    public static function provideKenyanLabourDayData(): array
     {
         return [
             '1963-05-01' => ['1963-05-01', true],
@@ -67,17 +68,16 @@ class KenyanHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideKenyanMadarakaDayData
-     */
-    public function test_it_recognizes_kenyan_madaraka_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideKenyanMadarakaDayData')]
+    public function it_recognizes_kenyan_madaraka_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isKenyanMadarakaDay());
     }
 
-    public function provideKenyanMadarakaDayData()
+    public static function provideKenyanMadarakaDayData(): array
     {
         return [
             '1963-06-01' => ['1963-06-01', true],
@@ -88,17 +88,16 @@ class KenyanHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideKenyanHudumaDayData
-     */
-    public function test_it_recognizes_kenyan_huduma_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideKenyanHudumaDayData')]
+    public function it_recognizes_kenyan_huduma_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isKenyanHudumaDay());
     }
 
-    public function provideKenyanHudumaDayData()
+    public static function provideKenyanHudumaDayData(): array
     {
         return [
             '1963-10-10' => ['1963-10-10', true],
@@ -109,17 +108,16 @@ class KenyanHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideKenyanMashujaaDayData
-     */
-    public function test_it_recognizes_kenyan_mashujaa_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideKenyanMashujaaDayData')]
+    public function it_recognizes_kenyan_mashujaa_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isKenyanMashujaaDay());
     }
 
-    public function provideKenyanMashujaaDayData()
+    public static function provideKenyanMashujaaDayData(): array
     {
         return [
             '1963-10-20' => ['1963-10-20', true],
@@ -131,17 +129,16 @@ class KenyanHolidaysTest extends TestCase
     }
 
 
-    /**
-     * @dataProvider provideKenyanUtamaduniDayData
-     */
-    public function test_it_recognizes_kenyan_utamaduni_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideKenyanUtamaduniDayData')]
+    public function it_recognizes_kenyan_utamaduni_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isKenyanUtamaduniDay());
     }
 
-    public function provideKenyanUtamaduniDayData()
+    public static function provideKenyanUtamaduniDayData(): array
     {
         return [
             '1963-12-26' => ['1963-12-26', true],

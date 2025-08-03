@@ -3,20 +3,21 @@
 namespace CarbonMacros;
 
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
 class NorthMacedonianHolidaysTest extends TestCase
 {
-    /**
-     * @dataProvider provideNorthMacedonianIndependenceDayData
-     */
-    public function test_it_knows_north_macedonian_independence_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideNorthMacedonianIndependenceDayData')]
+    public function it_knows_north_macedonian_independence_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isNorthMacedonianIndependenceDay());
     }
 
-    public function provideNorthMacedonianIndependenceDayData(): array
+    public static function provideNorthMacedonianIndependenceDayData(): array
     {
         return [
             '1900-12-25' => ['1900-12-25', false],
@@ -35,17 +36,16 @@ class NorthMacedonianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideNorthMacedonianRepublicDayData
-     */
-    public function test_it_knows_north_macedonian_republic_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideNorthMacedonianRepublicDayData')]
+    public function it_knows_north_macedonian_republic_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isNorthMacedonianRepublicDay());
     }
 
-    public function provideNorthMacedonianRepublicDayData(): array
+    public static function provideNorthMacedonianRepublicDayData(): array
     {
         return [
             '1900-12-25' => ['1900-12-25', false],
@@ -76,17 +76,16 @@ class NorthMacedonianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideNorthMacedonianDayOfPeoplesUprisingData
-     */
-    public function test_it_knows_north_macedonian_day_of_peoples_uprising($date, $validity)
+    #[Test]
+    #[DataProvider('provideNorthMacedonianDayOfPeoplesUprisingData')]
+    public function it_knows_north_macedonian_day_of_peoples_uprising(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isNorthMacedonianDayOfPeoplesUprising());
     }
 
-    public function provideNorthMacedonianDayOfPeoplesUprisingData(): array
+    public static function provideNorthMacedonianDayOfPeoplesUprisingData(): array
     {
         return [
             '1900-12-25' => ['1900-12-25', false],

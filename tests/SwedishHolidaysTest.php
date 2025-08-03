@@ -1,20 +1,23 @@
-<?php namespace CarbonMacros;
+<?php
+
+namespace CarbonMacros;
 
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
 class SwedishHolidaysTest extends TestCase
 {
-    /**
-     * @dataProvider provideSwedishMidsummerDayData
-     */
-    function test_it_knows_swedish_midsummer_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideSwedishMidsummerDayData')]
+    public function it_knows_swedish_midsummer_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isSwedishMidsummerDay());
     }
 
-    function provideSwedishMidsummerDayData()
+    public static function provideSwedishMidsummerDayData(): array
     {
         return [
             '1963-05-24' => ['1963-05-24', false],
@@ -28,17 +31,16 @@ class SwedishHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideSwedishNationalDayData
-     */
-    function test_it_knows_swedish_national_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideSwedishNationalDayData')]
+    public function it_knows_swedish_national_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isSwedishNationalDay());
     }
 
-    function provideSwedishNationalDayData()
+    public static function provideSwedishNationalDayData(): array
     {
         return [
             '1960-06-06' => ['1960-06-06', true],
@@ -52,17 +54,16 @@ class SwedishHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideChristmasEveData
-     */
-    function test_it_knows_christmas_eve($date, $validity)
+    #[Test]
+    #[DataProvider('provideChristmasEveData')]
+    public function it_knows_christmas_eve(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isChristmasEve());
     }
 
-    function provideChristmasEveData()
+    public static function provideChristmasEveData(): array
     {
         return [
             '1963-12-24' => ['1963-12-24', true],

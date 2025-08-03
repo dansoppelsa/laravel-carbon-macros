@@ -1,19 +1,22 @@
-<?php namespace CarbonMacros;
+<?php
+
+namespace CarbonMacros;
 
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
 class ItalianHolidaysTest extends TestCase
 {
-    /**
-     * @dataProvider provideLiberationDayDate
-     */
-    public function test_it_recognizes_liberation_day($date, $validity){
+    #[Test]
+    #[DataProvider('provideLiberationDayDate')]
+    public function it_recognizes_liberation_day(string $date, bool $validity): void{
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isLiberationDay());
     }
 
-    public function provideLiberationDayDate(){
+    public static function provideLiberationDayDate(): array{
         return [
             '1945-04-25' => ['1945-04-25', false],
             '2020-12-11' => ['2020-12-11', false],
@@ -24,16 +27,15 @@ class ItalianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideRepublicDayDate
-     */
-    public function test_it_recognizes_republic_day($date, $validity){
+    #[Test]
+    #[DataProvider('provideRepublicDayDate')]
+    public function it_recognizes_republic_day(string $date, bool $validity): void{
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isRepublicDay());
     }
 
-    public function provideRepublicDayDate(){
+    public static function provideRepublicDayDate(): array{
         return [
             '1945-06-02' => ['1945-06-02', false],
             '2020-11-30' => ['2020-11-30', false],
@@ -44,16 +46,15 @@ class ItalianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideImmaculateConceptionFeastDate
-     */
-    public function test_it_recognizes_immaculate_conception_feast($date, $validity){
+    #[Test]
+    #[DataProvider('provideImmaculateConceptionFeastDate')]
+    public function it_recognizes_immaculate_conception_feast(string $date, bool $validity): void{
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isImmaculateConceptionFeast());
     }
 
-    public function provideImmaculateConceptionFeastDate(){
+    public static function provideImmaculateConceptionFeastDate(): array{
         return [
             '1945-12-08' => ['1945-12-08', true],
             '1300-12-08' => ['1300-12-08', true],
@@ -64,16 +65,15 @@ class ItalianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideAssumptionOfMaryFeastDate
-     */
-    public function test_it_recognizes_is_assumption_of_mary_feast($date, $validity){
+    #[Test]
+    #[DataProvider('provideAssumptionOfMaryFeastDate')]
+    public function it_recognizes_is_assumption_of_mary_feast(string $date, bool $validity): void{
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isAssumptionOfMaryFeast());
     }
 
-    public function provideAssumptionOfMaryFeastDate(){
+    public static function provideAssumptionOfMaryFeastDate(): array{
         return [
             '1968-08-15' => ['1968-08-15', true],
             '2006-03-25' => ['2006-03-25', false],
@@ -84,16 +84,15 @@ class ItalianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideEpiphanyDate
-     */
-    public function test_it_recognizes_epiphany($date, $validity){
+    #[Test]
+    #[DataProvider('provideEpiphanyDate')]
+    public function it_recognizes_epiphany(string $date, bool $validity): void{
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isEpiphany());
     }
 
-    public function provideEpiphanyDate(){
+    public static function provideEpiphanyDate(): array{
         return [
             '1999-06-01' => ['1999-06-01', false],
             '1996-07-12' => ['1996-07-12', false],
@@ -104,16 +103,15 @@ class ItalianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideSaintStephenDayDate
-     */
-    public function test_it_recognizes_saint_stephen_day($date, $validity){
+    #[Test]
+    #[DataProvider('provideSaintStephenDayDate')]
+    public function it_recognizes_saint_stephen_day(string $date, bool $validity): void{
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isSaintStephenDay());
     }
 
-    public function provideSaintStephenDayDate(){
+    public static function provideSaintStephenDayDate(): array{
         return [
             '2015-08-23' => ['2015-08-23', false],
             '2065-12-26' => ['2065-12-26', true],
@@ -124,16 +122,15 @@ class ItalianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideSaintSylvesterDayDate
-     */
-    public function test_it_recognizes_saint_sylvester_day($date, $validity){
+    #[Test]
+    #[DataProvider('provideSaintSylvesterDayDate')]
+    public function it_recognizes_saint_sylvester_day(string $date, bool $validity): void{
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isSaintSylvesterDay());
     }
 
-    public function provideSaintSylvesterDayDate(){
+    public static function provideSaintSylvesterDayDate(): array{
         return [
             '2015-03-18' => ['2015-03-18', false],
             '2065-12-26' => ['2065-12-26', false],
@@ -144,16 +141,15 @@ class ItalianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideWorkersDayDate
-     */
-    public function test_it_recognizes_workers_day($date, $validity){
+    #[Test]
+    #[DataProvider('provideWorkersDayDate')]
+    public function it_recognizes_workers_day(string $date, bool $validity): void{
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isWorkersDay());
     }
 
-    public function provideWorkersDayDate(){
+    public static function provideWorkersDayDate(): array{
         return [
             '1930-04-21' => ['1930-04-21', true],
             '1880-03-23' => ['1880-03-23', false],

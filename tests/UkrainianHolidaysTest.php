@@ -1,21 +1,23 @@
-<?php namespace CarbonMacros;
+<?php
+
+namespace CarbonMacros;
 
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
 class UkrainianHolidaysTest extends TestCase
 {
-
-    /**
-     * @dataProvider provideIndependenceDayData
-     */
-    public function test_it_knows_independence_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideIndependenceDayData')]
+    public function it_knows_independence_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isUkrainianIndependenceDay());
     }
 
-    public function provideIndependenceDayData()
+    public static function provideIndependenceDayData(): array
     {
         return [
             '1980-08-24' => ['1980-08-24', false],
@@ -29,17 +31,16 @@ class UkrainianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideConstitutionDayData
-     */
-    public function test_it_knows_constitution_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideConstitutionDayData')]
+    public function it_knows_constitution_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isUkrainianConstitutionDay());
     }
 
-    public function provideConstitutionDayData()
+    public static function provideConstitutionDayData(): array
     {
         return [
             '1979-08-24' => ['1979-08-28', false],
@@ -53,17 +54,16 @@ class UkrainianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideLabourDayData
-     */
-    public function test_it_knows_ukrainian_labour_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideLabourDayData')]
+    public function it_knows_ukrainian_labour_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isUkrainianLabourDay());
     }
 
-    public function provideLabourDayData()
+    public static function provideLabourDayData(): array
     {
         return [
             '1986-05-01' => ['1986-05-01', true],
@@ -77,17 +77,16 @@ class UkrainianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideUkraineDefenderDay
-     */
-    public function test_it_knows_ukraine_defender_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideUkraineDefenderDay')]
+    public function it_knows_ukraine_defender_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isUkraineDefenderDay());
     }
 
-    public function provideUkraineDefenderDay()
+    public static function provideUkraineDefenderDay(): array
     {
         return [
             '1970-08-14' => ['1970-08-14', false],
@@ -101,17 +100,16 @@ class UkrainianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideKupalaNight
-     */
-    public function test_it_knows_kupala_night($date, $validity)
+    #[Test]
+    #[DataProvider('provideKupalaNight')]
+    public function it_knows_kupala_night(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isKupalaNight());
     }
 
-    public function provideKupalaNight()
+    public static function provideKupalaNight(): array
     {
         return [
             '1987-08-14' => ['1987-08-14', false],
@@ -125,17 +123,16 @@ class UkrainianHolidaysTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideVictoryDayOverNazism
-     */
-    public function test_it_knows_victory_day($date, $validity)
+    #[Test]
+    #[DataProvider('provideVictoryDayOverNazism')]
+    public function it_knows_victory_day(string $date, bool $validity): void
     {
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isVictoryDayOverNazism());
     }
 
-    public function provideVictoryDayOverNazism()
+    public static function provideVictoryDayOverNazism(): array
     {
         return [
             '1990-05-09' => ['1990-05-09', false],
