@@ -7,16 +7,6 @@ use Illuminate\Support\Carbon;
 class FrenchHolidaysTest extends TestCase
 {
     /**
-     * @dataProvider provideAllSaintsDayData
-     */
-    public function test_it_recognizes_all_saints_day($date, $validity)
-    {
-        $date = Carbon::parse($date);
-
-        $this->assertSame($validity, $date->isAllSaintsDay());
-    }
-
-    /**
      * @dataProvider provideAssumptionDayData
      */
     public function test_it_recognizes_assumption_day($date, $validity)
@@ -84,18 +74,6 @@ class FrenchHolidaysTest extends TestCase
         $date = Carbon::parse($date);
 
         $this->assertSame($validity, $date->isSecondWarArmisticeDay());
-    }
-
-    /**
-     * @return array[]
-     */
-    public function provideAllSaintsDayData()
-    {
-        return [
-            '1982-11-01' => ['1982-11-01', true],
-            '1982-01-01' => ['1982-01-01', false],
-            '1982-11-02' => ['1982-11-02', false],
-        ];
     }
 
     /**

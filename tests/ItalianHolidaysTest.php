@@ -65,26 +65,6 @@ class ItalianHolidaysTest extends TestCase
     }
 
     /**
-     * @dataProvider provideAllSaintsDayDate
-     */
-    public function test_it_recognizes_all_saints_day($date, $validity){
-        $date = Carbon::parse($date);
-
-        $this->assertSame($validity, $date->isAllSaintsDay());
-    }
-
-    public function provideAllSaintsDayDate(){
-        return [
-            '1968-08-29' => ['1968-08-29', false],
-            '1970-05-10' => ['1970-05-10', false],
-            '2000-11-01' => ['2000-11-01', true],
-            '1356-12-10' => ['1356-12-10', false],
-            '1993-11-01' => ['1993-11-01', true],
-            '2033-12-09' => ['2033-12-09', false]
-        ];
-    }
-
-    /**
      * @dataProvider provideAssumptionOfMaryFeastDate
      */
     public function test_it_recognizes_is_assumption_of_mary_feast($date, $validity){

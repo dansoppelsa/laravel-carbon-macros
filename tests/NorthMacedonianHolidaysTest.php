@@ -13,7 +13,7 @@ class NorthMacedonianHolidaysTest extends TestCase
     {
         $date = Carbon::parse($date);
 
-        $this->assertSame($validity, $date->isNorthMacedonianHoliday());
+        $this->assertSame($validity, $date->isNorthMacedonianIndependenceDay());
     }
 
     public function provideNorthMacedonianIndependenceDayData(): array
@@ -116,5 +116,4 @@ class NorthMacedonianHolidaysTest extends TestCase
             '2050-10-11' => ['2050-10-11', true], // Day of People's Uprising
         ];
     }
-
 }

@@ -40,5 +40,15 @@ trait MultiNationalDates
         Carbon::macro('isNewYearsEve', function () {
             return $this->month === 12 && $this->day === 31;
         });
+
+        Carbon::macro('isOrthodoxChristmasEve', function () {
+            // Orthodox Christmas Eve - 6th January
+            return $this->month === 1 && $this->day === 6;
+        });
+
+        Carbon::macro('isOrthodoxChristmasDay', function () {
+            // Orthodox Christmas Day - 7th January
+            return $this->month === 1 && $this->day === 7;
+        });
     }
 }

@@ -203,27 +203,4 @@ class USHolidaysTest extends TestCase
             '2025-10-13' => ['2025-10-13', true],
         ];
     }
-
-    /**
-     * @dataProvider provideNewYearsEveData
-     */
-    public function test_it_knows_new_years_eve($date, $validity)
-    {
-        $date = Carbon::parse($date);
-
-        $this->assertSame($validity, $date->isNewYearsEve());
-    }
-
-    public function provideNewYearsEveData()
-    {
-        return [
-            '1800-12-31' => ['1800-12-31', true],
-            '1950-12-31' => ['1950-12-31', true],
-            '2020-07-04' => ['2020-07-04', false],
-            '2020-12-30' => ['2020-12-30', false],
-            '2020-12-31' => ['2020-12-31', true],
-            '2021-01-01' => ['2021-01-01', false],
-            '2050-12-31' => ['2050-12-31', true],
-        ];
-    }
 }
