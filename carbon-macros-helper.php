@@ -84,6 +84,11 @@ namespace Illuminate\Support {
      * @method bool isGoodFriday
      * @method bool isNewYearsDay
      * @method bool isNewYearsEve
+     * @method bool isOrthodoxChristmasDay
+     * @method bool isOrthodoxChristmasEve
+     * @method bool isNorthMacedonianDayOfPeoplesUprising
+     * @method bool isNorthMacedonianIndependenceDay
+     * @method bool isNorthMacedonianRepublicDay
      * @method bool isChristmasEve
      * @method bool isSwedishMidsummerDay
      * @method bool isSwedishNationalDay
