@@ -11,7 +11,7 @@ class GenerateIdeHelpers extends Command
     protected $signature = 'generate-ide-helpers';
     protected $description = 'Generates the IDE helpers';
 
-    public function __invoke()
+    public function __invoke(): void
     {
         $files = $this->getTraitFiles();
 
@@ -26,9 +26,7 @@ class GenerateIdeHelpers extends Command
 
             return collect($matches['macros'])->sort();
         })
-        ->map(function (string $macroMethod) {
-            return "     * @method bool $macroMethod";
-        });
+        ->map(fn(string $macroMethod) => "     * @method bool $macroMethod");
 
         $header = $this->getFileHeader();
         $content = $files->implode(PHP_EOL);
@@ -62,12 +60,8 @@ EOT;
     protected function getTraitFiles(): Collection
     {
         return collect(scandir(lcm_path('src/traits')))
-            ->filter(function ($file) {
-                return Str::endsWith($file, '.php');
-            })
-            ->map(function (string $fileName) {
-                return lcm_path("src/traits/$fileName");
-            })
+            ->filter(fn($file) => Str::endsWith($file, '.php'))
+            ->map(fn(string $fileName) => lcm_path("src/traits/$fileName"))
             ->values();
     }
 }
