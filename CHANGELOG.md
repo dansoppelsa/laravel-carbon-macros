@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.0 - 2026-08-26
+### Changed
+- **BREAKING:** Dropped support for Laravel 8, 9, 10 and 11. Now requires Laravel 12 or 13.
+- **BREAKING:** Dropped support for PHP < 8.3. Now requires PHP 8.3+.
+- Updated dev dependencies to `orchestra/testbench` 10/11 and `phpunit/phpunit` 11.5/12.
+- Trimmed the CI matrix to the supported PHP (8.3, 8.4) and Laravel (12, 13) versions.
+
 ## 1.5.0 - 2020-12-28
 - Add IDE autocomplete helper file
 - Add Indian date helpers - [@prakashchhetri](https://github.com/prakashchhetri)
